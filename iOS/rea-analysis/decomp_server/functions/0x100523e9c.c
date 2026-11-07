@@ -1,0 +1,44 @@
+// rea decompile_all
+// name: FUN_100523e9c
+// address: 0x100523e9c
+// body: available
+// range: 0x100523e9c-0x100523f33 inclusive
+// non_contiguous: false
+// provider: Ghidra 12.1.4 (ghidra)
+// analysis_profile: 066f9d6c56d7a436e2061afaa7f68aa9085572cd83e3172cf52ecd30a6101bae
+// limitations: The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.; The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.; Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.; Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.; Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.; External functions and functions without an analyzable body return null; other decompiler failures remain explicit.
+// pseudocode: provider-specific; not original source
+
+
+undefined1  [16] FUN_100523e9c(uint param_1)
+
+{
+  undefined *puVar1;
+  undefined *puVar2;
+  undefined *unaff_x20;
+  long unaff_x21;
+  undefined8 unaff_x22;
+  undefined1 auVar3 [16];
+  undefined *local_40;
+  undefined2 local_38;
+  
+  local_40 = PTR___swiftEmptyArrayStorage_100995ea0;
+  local_38 = 0x100;
+  FUN_1005235c0(&local_40,param_1 & 0x1010101);
+  puVar1 = local_40;
+  if (unaff_x21 == 0) {
+    unaff_x22 = *(undefined8 *)(local_40 + 0x10);
+    puVar2 = local_40;
+    _swift_bridgeObjectRetain();
+    unaff_x20 = puVar2 + 0x20;
+    __sSS18_fromUTF8RepairingySS6result_Sb11repairsMadetSRys5UInt8VGFZ(unaff_x20,unaff_x22);
+    _swift_bridgeObjectRelease_n(puVar1,2);
+  }
+  else {
+    _swift_bridgeObjectRelease();
+  }
+  auVar3._8_8_ = unaff_x22;
+  auVar3._0_8_ = unaff_x20;
+  return auVar3;
+}
+

@@ -1,0 +1,121 @@
+// rea decompile_all
+// name: FUN_100425748
+// address: 0x100425748
+// body: available
+// range: 0x100425748-0x1004259c3 inclusive
+// non_contiguous: false
+// provider: Ghidra 12.1.4 (ghidra)
+// analysis_profile: 066f9d6c56d7a436e2061afaa7f68aa9085572cd83e3172cf52ecd30a6101bae
+// limitations: The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.; The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.; Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.; Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.; Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.; External functions and functions without an analyzable body return null; other decompiler failures remain explicit.
+// pseudocode: provider-specific; not original source
+
+
+/* WARNING: Removing unreachable block (ram,0x000100425900) */
+
+void FUN_100425748(ulong *param_1,undefined8 param_2,undefined8 param_3,long param_4)
+
+{
+  ulong uVar1;
+  ulong uVar2;
+  ulong uVar3;
+  ulong *puVar4;
+  ulong uVar5;
+  long unaff_x21;
+  ulong uVar6;
+  code *pcVar7;
+  ulong uVar8;
+  ulong uVar9;
+  ulong uVar10;
+  byte local_138 [72];
+  ulong local_f0;
+  ulong uStack_e8;
+  ulong local_e0;
+  ulong local_d8;
+  ulong local_d0;
+  ulong uStack_c8;
+  ulong uStack_c0;
+  ulong uStack_b8;
+  ulong local_b0;
+  ulong local_a0;
+  ulong uStack_98;
+  ulong local_90;
+  ulong local_88;
+  ulong local_80;
+  
+  uStack_98 = 0;
+  local_a0 = 0;
+  local_88 = 0;
+  local_90 = 0;
+  local_80 = 0xf000000000000000;
+  uVar9 = param_1[4];
+  uVar10 = param_1[6];
+  uVar5 = param_1[8];
+  uVar6 = uVar9 & uVar10 & uVar5 & 0x3000000000000000;
+  puVar4 = param_1;
+  if (uVar6 != 0x3000000000000000 && ((uint)(uVar5 >> 0x3b) & 6 | (uint)(uVar10 >> 0x3d) & 1) == 5)
+  {
+    uVar1 = *param_1;
+    uVar2 = param_1[1];
+    uVar3 = param_1[2];
+    local_e0 = param_1[2];
+    uVar8 = param_1[3];
+    local_f0 = uVar1;
+    uStack_e8 = uVar2;
+    local_d8 = uVar8;
+    local_d0 = uVar9;
+    uStack_c8 = param_1[5];
+    uStack_c0 = uVar10;
+    uStack_b8 = param_1[7];
+    local_b0 = uVar5;
+    FUN_10042d20c(&local_f0,local_138);
+    puVar4 = (ulong *)0x0;
+    FUN_1004337b0(0,0,0,0,0xf000000000000000);
+    local_a0 = uVar1 & 0xffffffff;
+    local_90 = (ulong)(byte)uVar3 & 1;
+    uStack_98 = uVar2;
+    local_88 = uVar8;
+    local_80 = uVar9;
+  }
+  pcVar7 = *(code **)(param_4 + 0x198);
+  FUN_10042fa78();
+  (*pcVar7)(&local_a0,&DAT_1009beea8,puVar4,param_3,param_4);
+  uVar2 = local_80;
+  uVar1 = local_88;
+  uVar10 = local_90;
+  uVar9 = uStack_98;
+  uVar5 = local_a0;
+  if ((unaff_x21 == 0) && (local_80 >> 0x3c < 0xf)) {
+    if (uVar6 == 0x3000000000000000) {
+      FUN_100008184(local_88,local_80);
+    }
+    else {
+      pcVar7 = *(code **)(param_4 + 8);
+      FUN_100008184(local_88,local_80);
+      (*pcVar7)(param_3,param_4);
+    }
+    FUN_1004337b0(local_a0,uStack_98,local_90,local_88,local_80);
+    local_138[0] = (byte)uVar10 & 1;
+    uStack_c8 = param_1[5];
+    local_d0 = param_1[4];
+    uStack_b8 = param_1[7];
+    uStack_c0 = param_1[6];
+    local_b0 = param_1[8];
+    uStack_e8 = param_1[1];
+    local_f0 = *param_1;
+    local_d8 = param_1[3];
+    local_e0 = param_1[2];
+    *param_1 = uVar5 & 0xffffffff;
+    param_1[1] = uVar9;
+    *(byte *)(param_1 + 2) = local_138[0];
+    param_1[3] = uVar1;
+    param_1[4] = uVar2 & 0xcfffffffffffffff;
+    param_1[6] = 0x2000000000000000;
+    param_1[8] = 0x2000000000000000;
+    FUN_100040bb4(&local_f0,&DAT_100a9eea8,&DAT_100825d80);
+  }
+  else {
+    FUN_1004337b0(local_a0,uStack_98,local_90,local_88,local_80);
+  }
+  return;
+}
+

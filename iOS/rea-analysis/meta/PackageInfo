@@ -1,0 +1,17 @@
+<?xml version="1.0" standalone="yes"?>
+<pkg-info format-version="2" relocatable="false" overwrite-permissions="false" followSymLinks="false" identifier="com.netease.uuremote" version="4.46.0" generator-version="InstallCmds-864.12 (25F80)" install-location="/" auth="root">
+    <payload numberOfFiles="166" installKBytes="181010"/>
+    <bundle-version>
+        <bundle id="com.netease.uuremote"/>
+    </bundle-version>
+    <bundle path="./Applications/UURemote.app" id="com.netease.uuremote" CFBundleShortVersionString="4.46.0" CFBundleVersion="630"/>
+    <upgrade-bundle/>
+    <update-bundle/>
+    <atomic-update-bundle/>
+    <strict-identifier/>
+    <relocate/>
+    <scripts>
+        <preinstall file="./preinstall" timeout="600"/>
+        <postinstall file="./postinstall" timeout="600"/>
+    </scripts>
+</pkg-info>

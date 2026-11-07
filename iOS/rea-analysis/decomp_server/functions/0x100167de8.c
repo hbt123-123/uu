@@ -1,0 +1,30 @@
+// rea decompile_all
+// name: FUN_100167de8
+// address: 0x100167de8
+// body: available
+// range: 0x100167de8-0x100167e7b inclusive
+// non_contiguous: false
+// provider: Ghidra 12.1.4 (ghidra)
+// analysis_profile: 066f9d6c56d7a436e2061afaa7f68aa9085572cd83e3172cf52ecd30a6101bae
+// limitations: The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.; The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.; Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.; Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.; Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.; External functions and functions without an analyzable body return null; other decompiler failures remain explicit.
+// pseudocode: provider-specific; not original source
+
+
+void FUN_100167de8(undefined8 param_1,long param_2,long param_3)
+
+{
+  undefined1 auStack_64 [4];
+  undefined1 auStack_60 [24];
+  undefined1 auStack_48 [24];
+  
+  _swift_beginAccess(param_2 + 0x10,auStack_48,1,0);
+  *(int *)(param_2 + 0x10) = (int)param_1;
+  *(undefined1 *)(param_2 + 0x14) = 0;
+  _swift_beginAccess(param_3 + _TtC14UURemoteServer18ClipboardPCManager::dropTasks,auStack_60,0x21,0
+                    );
+  FUN_10006d93c(auStack_64,param_1);
+  FUN_10006d93c(auStack_64,param_1);
+  _swift_endAccess(auStack_60);
+  return;
+}
+

@@ -1,0 +1,46 @@
+// rea decompile_all
+// name: FUN_100378cd8
+// address: 0x100378cd8
+// body: available
+// range: 0x100378cd8-0x100378d7b inclusive
+// non_contiguous: false
+// provider: Ghidra 12.1.4 (ghidra)
+// analysis_profile: 066f9d6c56d7a436e2061afaa7f68aa9085572cd83e3172cf52ecd30a6101bae
+// limitations: The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.; The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.; Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.; Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.; Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.; External functions and functions without an analyzable body return null; other decompiler failures remain explicit.
+// pseudocode: provider-specific; not original source
+
+
+void FUN_100378cd8(long *param_1,int param_2)
+
+{
+  long *plVar1;
+  ID IVar2;
+  ID IVar3;
+  
+  if (param_2 == 0) {
+    IVar3 = objc_stub::respondsToSelector_(DAT_100ad1398,"onMMKVCRCCheckFail:");
+    IVar2 = DAT_100ad1398;
+    if ((int)IVar3 != 0) {
+      plVar1 = (long *)*param_1;
+      if (-1 < *(char *)((long)param_1 + 0x17)) {
+        plVar1 = param_1;
+      }
+      IVar3 = NSString::stringWithUTF8String_((ID)&_OBJC_CLASS___NSString,plVar1);
+      objc_stub::onMMKVCRCCheckFail_(IVar2,IVar3);
+    }
+  }
+  else {
+    IVar3 = objc_stub::respondsToSelector_(DAT_100ad1398,"onMMKVFileLengthError:");
+    IVar2 = DAT_100ad1398;
+    if ((int)IVar3 != 0) {
+      plVar1 = (long *)*param_1;
+      if (-1 < *(char *)((long)param_1 + 0x17)) {
+        plVar1 = param_1;
+      }
+      IVar3 = NSString::stringWithUTF8String_((ID)&_OBJC_CLASS___NSString,plVar1);
+      objc_stub::onMMKVFileLengthError_(IVar2,IVar3);
+    }
+  }
+  return;
+}
+

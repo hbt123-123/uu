@@ -1,0 +1,78 @@
+// rea decompile_all
+// name: FUN_10048e114
+// address: 0x10048e114
+// body: available
+// range: 0x10048e114-0x10048e283 inclusive
+// non_contiguous: false
+// provider: Ghidra 12.1.4 (ghidra)
+// analysis_profile: 066f9d6c56d7a436e2061afaa7f68aa9085572cd83e3172cf52ecd30a6101bae
+// limitations: The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.; The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.; Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.; Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.; Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.; External functions and functions without an analyzable body return null; other decompiler failures remain explicit.
+// pseudocode: provider-specific; not original source
+
+
+/* WARNING: Removing unreachable block (ram,0x00010048e274) */
+/* WARNING: Removing unreachable block (ram,0x00010048e240) */
+
+void FUN_10048e114(undefined8 param_1,long param_2,ulong param_3)
+
+{
+  long lVar1;
+  long lVar2;
+  ulong uVar3;
+  undefined *puVar4;
+  code *pcVar5;
+  long unaff_x20;
+  long unaff_x21;
+  code *pcVar6;
+  
+  pcVar6 = *(code **)(param_3 + 0x10);
+  lVar1 = param_2;
+  uVar3 = param_3;
+  (*pcVar6)();
+  if (unaff_x21 == 0) {
+    while ((uVar3 & 1) == 0) {
+      if (lVar1 < 4) {
+        if (lVar1 == 1) {
+          pcVar5 = *(code **)(param_3 + 0x58);
+LAB_10048e18c:
+          (*pcVar5)();
+        }
+        else if (lVar1 == 2) {
+          pcVar5 = *(code **)(param_3 + 0x180);
+          FUN_100493538();
+          lVar2 = unaff_x20 + 8;
+          puVar4 = &DAT_1009c66e0;
+LAB_10048e260:
+          (*pcVar5)(lVar2,puVar4,lVar1,param_2,param_3);
+        }
+        else if (lVar1 == 3) {
+          pcVar5 = *(code **)(param_3 + 0x138);
+          goto LAB_10048e18c;
+        }
+      }
+      else if (lVar1 == 4) {
+        (**(code **)(param_3 + 0x1b8))
+                  (unaff_x20 + 0x18,&DAT_1009cf730,&DAT_1009cf730,&PTR_PTR_1009cf548,
+                   &PTR_PTR_1009cf560,param_2,param_3);
+      }
+      else {
+        if (lVar1 == 5) {
+          pcVar5 = *(code **)(param_3 + 0x138);
+          goto LAB_10048e18c;
+        }
+        if (lVar1 == 6) {
+          pcVar5 = *(code **)(param_3 + 0x198);
+          FUN_1004946d8();
+          lVar2 = unaff_x20 + 0x38;
+          puVar4 = &DAT_1009c65b0;
+          goto LAB_10048e260;
+        }
+      }
+      lVar1 = param_2;
+      uVar3 = param_3;
+      (*pcVar6)();
+    }
+  }
+  return;
+}
+

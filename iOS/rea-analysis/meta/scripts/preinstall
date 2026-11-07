@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+echo "Running Pre script"
+
+# 关掉正在运行的app
+echo "Killing UURemote"
+killall UURemote
+
+echo "Finding old version of UURemote"
+rm -rf /Applications/nrd-mac-client.app 
+rm -rf /Applications/UURemote.app 
+rm ~/Library/LaunchAgents/com.163.uuremote.plist
+rm /Library/LaunchAgents/com.netease.uuremote.agent.plist
+rm /Library/LaunchDaemons/com.netease.uuremote.daemon.plist
+
+echo "Removed old versions of UURemote in Applications, if any."
+echo "Run UURemote preinstall script success."
+exit 0

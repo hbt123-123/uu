@@ -1,0 +1,51 @@
+// rea decompile_all
+// name: FUN_1000f925c
+// address: 0x1000f925c
+// body: available
+// range: 0x1000f925c-0x1000f934b inclusive
+// non_contiguous: false
+// provider: Ghidra 12.1.4 (ghidra)
+// analysis_profile: 066f9d6c56d7a436e2061afaa7f68aa9085572cd83e3172cf52ecd30a6101bae
+// limitations: The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.; The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.; Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.; Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.; Ghidra Listing reports a terminal call at 0x1000f9318 to 0x1000b1fc4 FUN_1000b1fc4 (external=false, thunk=false, hasNoReturn=false); fallthrough is excluded by Ghidra's flow model. The reason for the terminal flow is not established by this observation.; Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.; External functions and functions without an analyzable body return null; other decompiler failures remain explicit.
+// pseudocode: provider-specific; not original source
+
+
+/* WARNING: Function: _objc_retain replaced with injection: _objc_retain_fixup */
+
+void FUN_1000f925c(void)
+
+{
+  undefined8 uVar1;
+  undefined8 uVar2;
+  long lVar3;
+  long *plVar4;
+  long unaff_x22;
+  
+  lVar3 = *(long *)(unaff_x22 + 0x28);
+  _swift_beginAccess(lVar3 + 0x10,unaff_x22 + 0x10,0,0);
+  lVar3 = lVar3 + 0x10;
+  _swift_weakLoadStrong();
+  *(long *)(unaff_x22 + 0x38) = lVar3;
+  if (lVar3 != 0) {
+    if (DAT_100a73b60 != -1) {
+      _swift_once(&DAT_100a73b60,FUN_1000efc4c);
+    }
+    lVar3 = DAT_100b360a8;
+    *(long *)(unaff_x22 + 0x40) = DAT_100b360a8;
+    *(undefined8 *)(unaff_x22 + 0x48) = *(undefined8 *)(lVar3 + 0x70);
+    uVar1 = *(undefined8 *)(*(long *)(unaff_x22 + 0x30) + 0x10);
+    uVar2 = *(undefined8 *)(*(long *)(unaff_x22 + 0x30) + 0x18);
+    plVar4 = (long *)0x130;
+    _swift_task_alloc();
+    *(long **)(unaff_x22 + 0x50) = plVar4;
+    *plVar4 = unaff_x22;
+    plVar4[1] = (long)FUN_1000f934c;
+    FUN_1000b1fc4(uVar1,uVar2);
+    return;
+  }
+                    /* WARNING: Could not recover jumptable at 0x0001000f9330. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (**(code **)(unaff_x22 + 8))();
+  return;
+}
+

@@ -1,0 +1,51 @@
+// rea decompile_all
+// name: FUN_10022c778
+// address: 0x10022c778
+// body: available
+// range: 0x10022c778-0x10022c86b inclusive
+// non_contiguous: false
+// provider: Ghidra 12.1.4 (ghidra)
+// analysis_profile: 066f9d6c56d7a436e2061afaa7f68aa9085572cd83e3172cf52ecd30a6101bae
+// limitations: The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.; The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.; Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.; Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.; Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.; External functions and functions without an analyzable body return null; other decompiler failures remain explicit.
+// pseudocode: provider-specific; not original source
+
+
+void FUN_10022c778(undefined8 param_1)
+
+{
+  long lVar1;
+  code *pcVar2;
+  undefined8 uVar3;
+  long lVar4;
+  long lVar5;
+  undefined1 auStack_48 [24];
+  
+  uVar3 = DAT_100a7ef50;
+  pcVar2 = DAT_100a7ef48;
+  if (DAT_100a7ef48 != (code *)0x0) {
+    _swift_retain(DAT_100a7ef50);
+    (*pcVar2)(param_1);
+    FUN_10007ed2c(pcVar2,uVar3);
+  }
+  if (DAT_100a7ef38 == '\x01') {
+    if (DAT_100a7de00 != -1) {
+      _swift_once(&DAT_100a7de00,FUN_10022c42c);
+    }
+    _swift_beginAccess(&DAT_100a7ef40,auStack_48,0,0);
+    lVar1 = DAT_100a7ef40;
+    lVar5 = *(long *)(DAT_100a7ef40 + 0x10);
+    if (lVar5 != 0) {
+      lVar4 = DAT_100a7ef40 + 0x20;
+      _swift_bridgeObjectRetain(DAT_100a7ef40);
+      do {
+        FUN_10003f030(lVar4,*(undefined8 *)(lVar4 + 0x18));
+        FUN_10022eff4();
+        lVar4 = lVar4 + 0x28;
+        lVar5 = lVar5 + -1;
+      } while (lVar5 != 0);
+      _swift_bridgeObjectRelease(lVar1);
+    }
+  }
+  return;
+}
+

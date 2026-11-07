@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<installer-gui-script authoringTool="Packages" authoringToolVersion="1.2.11" authoringToolBuild="739" minSpecVersion="1">
+    <options hostArchitectures="arm64,x86_64" rootVolumeOnly="true" customize="never"/>
+    <volume-check script="check_version()"/>
+    <!--+==========================+
+        |       Presentation       |
+        +==========================+-->
+    <title>DISTRIBUTION_TITLE</title>
+    <welcome file="welcome.rtf"/>
+    <!--+==========================+
+        |         Installer        |
+        +==========================+-->
+    <choices-outline>
+        <line choice="installer_choice_1"/>
+    </choices-outline>
+    <choice id="installer_choice_1" title="INSTALLER_CHOICE_1_TITLE" description="INSTALLER_CHOICE_1_DESCRIPTION">
+        <pkg-ref id="com.netease.uuremote"/>
+    </choice>
+    <!--+==========================+
+        |    Package References    |
+        +==========================+-->
+    <pkg-ref id="com.netease.uuremote" version="4.46.0" auth="Root" installKBytes="181010">#UURemote.pkg</pkg-ref>
+    <pkg-ref id="com.netease.uuremote" updateKBytes="0">
+        <bundle-version>
+            <bundle CFBundleShortVersionString="4.46.0" CFBundleVersion="630" id="com.netease.uuremote" path="Applications/UURemote.app"/>
+        </bundle-version>
+    </pkg-ref>
+    <!-- check -->
+    <script><![CDATA[
+        function check_version(){
+            var plist = system.files.bundleAtPath("/Applications/UURemote.app");
+            var package = choices.installer_choice_1.packages;
+            if (package === null || typeof package === "undefined"){
+                system.log('can not get package info');
+                return true;
+            }
+            if (plist === null){
+                system.log('not already installed');
+                return true;
+            }
+            var packageVersion = package[0]['version'];
+            var alreadyVersion = plist.CFBundleShortVersionString;
+            system.log('already version' + alreadyVersion);
+            system.log('package version' + packageVersion);
+            system.log(system.compareVersions(packageVersion,alreadyVersion));
+            if (system.compareVersions(packageVersion,alreadyVersion) === -1){
+                system.log("已安装更高版本");
+                my.result.type = 'Fatal';
+                my.result.title = "已安装更高版本";
+                my.result.message = "检测到已经按装更高版本的程序";
+                return false;
+            }
+            return true;
+        }
+    ]]></script>
+    <product version="4.46.0"/>
+</installer-gui-script>

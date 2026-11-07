@@ -1,0 +1,60 @@
+// rea decompile_all
+// name: FUN_1002e4aa0
+// address: 0x1002e4aa0
+// body: available
+// range: 0x1002e4aa0-0x1002e4bc7 inclusive
+// non_contiguous: false
+// provider: Ghidra 12.1.4 (ghidra)
+// analysis_profile: 066f9d6c56d7a436e2061afaa7f68aa9085572cd83e3172cf52ecd30a6101bae
+// limitations: The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.; The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.; Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.; Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.; Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.; External functions and functions without an analyzable body return null; other decompiler failures remain explicit.
+// pseudocode: provider-specific; not original source
+
+
+undefined **
+FUN_1002e4aa0(undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4,
+             undefined8 param_5,undefined8 param_6,undefined8 param_7,undefined4 param_8,
+             undefined8 param_9,undefined8 param_10,undefined8 param_11,undefined8 param_12)
+
+{
+  undefined *puVar1;
+  undefined **ppuVar2;
+  code *pcVar3;
+  long *unaff_x20;
+  undefined *local_110 [3];
+  undefined *local_f8;
+  undefined **ppuStack_f0;
+  undefined1 auStack_e8 [40];
+  undefined8 local_c0;
+  undefined8 uStack_b8;
+  undefined8 local_b0;
+  undefined1 auStack_a8 [40];
+  undefined8 local_80;
+  undefined8 uStack_78;
+  undefined8 local_70;
+  
+  FUN_1000b142c(param_1,auStack_e8);
+  FUN_1000b142c(param_5,auStack_a8);
+  uStack_78 = param_9;
+  local_70 = param_10;
+  local_f8 = &DAT_1009aeae0;
+  ppuStack_f0 = &PTR_PTR_1009aebe8;
+  puVar1 = &DAT_1009ae638;
+  local_c0 = param_2;
+  uStack_b8 = param_3;
+  local_b0 = param_4;
+  local_80 = param_6;
+  _swift_allocObject(&DAT_1009ae638,0x90,7);
+  local_110[0] = puVar1;
+  FUN_1002eebac(auStack_e8,puVar1 + 0x10);
+  pcVar3 = *(code **)(*unaff_x20 + 0x130);
+  _swift_bridgeObjectRetain(param_6);
+  _swift_bridgeObjectRetain(param_3);
+  _swift_bridgeObjectRetain(param_4);
+  FUN_10004090c(param_9,param_10);
+  ppuVar2 = local_110;
+  (*pcVar3)(ppuVar2,param_7,param_8,param_11,param_12);
+  FUN_1002eebe0(auStack_e8);
+  FUN_10003f094(local_110);
+  return ppuVar2;
+}
+

@@ -1,0 +1,60 @@
+// rea decompile_all
+// name: FUN_1003993fc
+// address: 0x1003993fc
+// body: available
+// range: 0x1003993fc-0x100399567 inclusive
+// non_contiguous: false
+// provider: Ghidra 12.1.4 (ghidra)
+// analysis_profile: 066f9d6c56d7a436e2061afaa7f68aa9085572cd83e3172cf52ecd30a6101bae
+// limitations: The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.; The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.; Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.; Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.; Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.; External functions and functions without an analyzable body return null; other decompiler failures remain explicit.
+// pseudocode: provider-specific; not original source
+
+
+void FUN_1003993fc(long param_1)
+
+{
+  undefined8 uVar1;
+  undefined8 uVar2;
+  undefined *puVar3;
+  long extraout_x8;
+  undefined8 *unaff_x20;
+  long unaff_x21;
+  undefined1 *puVar4;
+  long lVar5;
+  undefined1 auStack_60 [12];
+  undefined1 local_54;
+  undefined1 local_53;
+  undefined1 local_52;
+  undefined1 local_51;
+  
+  puVar3 = &DAT_100a8ac60;
+  FUN_100004bb4(&DAT_100a8ac60,&DAT_10081f2a0);
+  lVar5 = *(long *)(puVar3 + -8);
+  (*(code *)PTR____chkstk_darwin_100995498)(*(long *)(lVar5 + 0x40) + 0xfU & 0xfffffffffffffff0);
+  puVar4 = auStack_60 + -extraout_x8;
+  uVar1 = *(undefined8 *)(param_1 + 0x18);
+  uVar2 = *(undefined8 *)(param_1 + 0x20);
+  FUN_10003f030(param_1,uVar1);
+  FUN_100399568();
+  __ss7EncoderP9container7keyedBys22KeyedEncodingContainerVyqd__Gqd__m_ts9CodingKeyRd__lFTj
+            (puVar4,&DAT_1009b6138,&DAT_1009b6138,param_1,uVar1,uVar2);
+  local_51 = 0;
+  __ss22KeyedEncodingContainerV6encode_6forKeyySi_xtKF(*unaff_x20,&local_51,puVar3);
+  if (unaff_x21 == 0) {
+    local_52 = 1;
+    __ss22KeyedEncodingContainerV6encode_6forKeyySS_xtKF(unaff_x20[1],unaff_x20[2],&local_52,puVar3)
+    ;
+    local_53 = 2;
+    __ss22KeyedEncodingContainerV6encode_6forKeyySS_xtKF(unaff_x20[3],unaff_x20[4],&local_53,puVar3)
+    ;
+    local_54 = 3;
+    __ss22KeyedEncodingContainerV6encode_6forKeyySS_xtKF(unaff_x20[5],unaff_x20[6],&local_54,puVar3)
+    ;
+    (**(code **)(lVar5 + 8))(puVar4,puVar3);
+  }
+  else {
+    (**(code **)(lVar5 + 8))(puVar4,puVar3);
+  }
+  return;
+}
+
