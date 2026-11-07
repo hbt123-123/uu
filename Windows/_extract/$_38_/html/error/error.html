@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <script src="uuycbridge.js"></script>
+    <meta charset="UTF-8">
+    <title>网络错误</title>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f5f5f5;
+        }
+        .container {
+            text-align: center;
+        }
+        .retry-btn {
+            padding: 10px 32px;
+            font-size: 16px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            background: #fff;
+            color: #333;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .retry-btn:hover {
+            background: #e4edf9;
+        }
+        .retry-btn:active {
+            background: #cfe2f5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>网络错误</h2>
+        <p>请检查网络连接后重试。</p>
+        <button class="retry-btn" id="retryBtn">重试</button>
+    </div>
+</body>
+
+<script>
+        document.getElementById('retryBtn').onclick = function() {
+			window.UUYCBridge.onBridge('reloadSkeletonContentUrl', {})
+        };
+</script>
+</html>

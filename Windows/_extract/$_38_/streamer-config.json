@@ -1,0 +1,38 @@
+{
+  "disable_h265_codec": [
+      {
+          "enable": true,
+          "roles": [
+            "controller"
+          ],
+          "platforms": [
+              "windows"
+          ],
+          "graphic_cards": [
+              "GTX\\s*6",
+              "GT\\s*6",
+              "GTX\\s*7",
+              "GT\\s*7",
+              "GTX\\s*8",
+              "GT\\s*8",
+              "GTX\\s*9",
+              "GT\\s*9",
+              "NVIDIA\\s*QUADRO"
+          ]
+      }
+  ],
+  "set_max_decoder_cap": [
+      {
+          "enable": true,
+          "platforms": [
+              "android"
+          ],
+          "brands": [
+              "Lenovo"
+          ],
+          "models": [
+              "TB371FC"
+          ]
+      }
+  ]
+}
