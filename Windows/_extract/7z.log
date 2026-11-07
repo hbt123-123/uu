@@ -1,0 +1,66 @@
+
+7-Zip 23.01 (x64) : Copyright (c) 1999-2023 Igor Pavlov : 2023-06-20
+ 64-bit locale=C.UTF-8 Threads:240 OPEN_MAX:1048576
+
+Scanning the drive for archives:
+1 file, 93245960 bytes (89 MiB)
+
+Extracting archive: ../uuyc_4.46.0.exe
+--
+Path = ../uuyc_4.46.0.exe
+Type = PE
+Physical Size = 93245960
+CPU = x86
+Characteristics = Executable 32-bit NoRelocs NoLineNums NoLocalSyms
+Created = 2026-04-20 04:38:47
+Headers Size = 1024
+Checksum = 93305648
+Image Size = 561152
+Section Alignment = 4096
+File Alignment = 512
+Code Size = 26112
+Initialized Data Size = 139776
+Uninitialized Data Size = 2048
+Linker Version = 6.0
+OS Version = 4.0
+Image Version = 6.0
+Subsystem Version = 4.0
+Subsystem = Windows GUI
+DLL Characteristics = Relocated NX-Compatible NoSEH TerminalServerAware
+Stack Reserve = 1048576
+Stack Commit = 4096
+Heap Reserve = 1048576
+Heap Commit = 4096
+Image Base = 4194304
+Comment = 
+{
+FileVersion: 4.46.0.4716
+ProductVersion: 4.46.0.4716
+CompanyName: Netease
+FileDescription: 网易UU远程安装程序
+LegalCopyright:  Copyright 2024 Netease
+LegalTrademarks: Netease
+ProductName: 网易UU远程
+}
+----
+Path = [0]
+Size = 93030928
+Packed Size = 93030928
+Virtual Size = 93030928
+Offset = 204288
+--
+Path = [0]
+Type = Nsis
+Physical Size = 93030925
+Tail Size = 3
+Method = LZMA:25
+Solid = -
+Headers Size = 245708
+Embedded Stub Size = 0
+SubType = NSIS-3 Unicode BadCmd=13
+
+Everything is Ok
+
+Files: 148
+Size:       298352108
+Compressed: 93245960
