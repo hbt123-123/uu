@@ -1,0 +1,29 @@
+// rea decompile_all
+// name: SentryAsynchronousOperation::start
+// address: 0x10078cc9c
+// body: available
+// range: 0x10078cc9c-0x10078cce3 inclusive
+// non_contiguous: false
+// provider: Ghidra 12.1.4 (ghidra)
+// analysis_profile: 066f9d6c56d7a436e2061afaa7f68aa9085572cd83e3172cf52ecd30a6101bae
+// limitations: The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.; The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.; Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.; Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.; Ghidra Listing reports a terminal call at 0x10078ccc4 to 0x1007f2f60 objc_stub::FUN_1007f2f60 (external=false, thunk=false, hasNoReturn=false); fallthrough is excluded by Ghidra's flow model. The reason for the terminal flow is not established by this observation.; Ghidra Listing reports a terminal call at 0x10078cce0 to 0x1007edfc0 objc_stub::FUN_1007edfc0 (external=false, thunk=false, hasNoReturn=false); fallthrough is excluded by Ghidra's flow model. The reason for the terminal flow is not established by this observation.; Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.; External functions and functions without an analyzable body return null; other decompiler failures remain explicit.
+// pseudocode: provider-specific; not original source
+
+
+/* Function Stack Size: 0x10 bytes */
+
+void SentryAsynchronousOperation::start(ID param_1,SEL param_2)
+
+{
+  ID IVar1;
+  
+  IVar1 = objc_stub::FUN_1007ecc60(param_1);
+  if ((int)IVar1 != 0) {
+    objc_stub::FUN_1007f2f60(param_1,1);
+    return;
+  }
+  objc_stub::FUN_1007f2d80(param_1,1);
+  objc_stub::FUN_1007edfc0(param_1);
+  return;
+}
+

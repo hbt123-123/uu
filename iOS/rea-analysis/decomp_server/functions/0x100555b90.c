@@ -1,0 +1,89 @@
+// rea decompile_all
+// name: FUN_100555b90
+// address: 0x100555b90
+// body: available
+// range: 0x100555b90-0x100555d07 inclusive
+// non_contiguous: false
+// provider: Ghidra 12.1.4 (ghidra)
+// analysis_profile: 066f9d6c56d7a436e2061afaa7f68aa9085572cd83e3172cf52ecd30a6101bae
+// limitations: The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.; The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.; Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.; Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.; Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.; External functions and functions without an analyzable body return null; other decompiler failures remain explicit.
+// pseudocode: provider-specific; not original source
+
+
+undefined8 * FUN_100555b90(undefined8 *param_1,undefined8 *param_2)
+
+{
+  long lVar1;
+  undefined8 uVar2;
+  undefined8 uVar3;
+  undefined8 uVar4;
+  undefined8 uVar5;
+  
+  lVar1 = param_2[3];
+  if (param_1[3] == 0) {
+    if (lVar1 != 0) {
+      param_1[3] = lVar1;
+      param_1[4] = param_2[4];
+      (*(code *)**(undefined8 **)(lVar1 + -8))(param_1,param_2);
+      goto LAB_100555c04;
+    }
+  }
+  else {
+    if (lVar1 != 0) {
+      FUN_100260848(param_1,param_2);
+      goto LAB_100555c04;
+    }
+    FUN_10003f094(param_1);
+  }
+  uVar3 = param_2[1];
+  uVar2 = *param_2;
+  uVar5 = param_2[3];
+  uVar4 = param_2[2];
+  param_1[4] = param_2[4];
+  param_1[1] = uVar3;
+  *param_1 = uVar2;
+  param_1[3] = uVar5;
+  param_1[2] = uVar4;
+LAB_100555c04:
+  param_1[5] = param_2[5];
+  param_1[6] = param_2[6];
+  uVar2 = param_1[7];
+  param_1[7] = param_2[7];
+  _swift_retain();
+  _swift_release(uVar2);
+  param_1[8] = param_2[8];
+  *(undefined1 *)(param_1 + 9) = *(undefined1 *)(param_2 + 9);
+  *(undefined1 *)((long)param_1 + 0x49) = *(undefined1 *)((long)param_2 + 0x49);
+  param_1[10] = param_2[10];
+  param_1[0xb] = param_2[0xb];
+  *(undefined2 *)(param_1 + 0xc) = *(undefined2 *)(param_2 + 0xc);
+  uVar2 = param_1[0xd];
+  param_1[0xd] = param_2[0xd];
+  _swift_retain();
+  _swift_release(uVar2);
+  uVar2 = param_1[0xe];
+  param_1[0xe] = param_2[0xe];
+  _swift_bridgeObjectRetain();
+  _swift_bridgeObjectRelease(uVar2);
+  uVar2 = param_1[0xf];
+  param_1[0xf] = param_2[0xf];
+  _swift_bridgeObjectRetain();
+  _swift_bridgeObjectRelease(uVar2);
+  uVar2 = param_1[0x10];
+  param_1[0x10] = param_2[0x10];
+  _swift_bridgeObjectRetain();
+  _swift_bridgeObjectRelease(uVar2);
+  uVar2 = param_1[0x11];
+  param_1[0x11] = param_2[0x11];
+  _swift_bridgeObjectRetain();
+  _swift_bridgeObjectRelease(uVar2);
+  uVar2 = param_1[0x12];
+  param_1[0x12] = param_2[0x12];
+  _swift_bridgeObjectRetain();
+  _swift_bridgeObjectRelease(uVar2);
+  uVar2 = param_2[0x13];
+  param_1[0x14] = param_2[0x14];
+  param_1[0x13] = uVar2;
+  return param_1;
+}
+

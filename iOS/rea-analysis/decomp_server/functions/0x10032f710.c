@@ -1,0 +1,37 @@
+// rea decompile_all
+// name: FUN_10032f710
+// address: 0x10032f710
+// body: available
+// range: 0x10032f710-0x10032f79b inclusive
+// non_contiguous: false
+// provider: Ghidra 12.1.4 (ghidra)
+// analysis_profile: 066f9d6c56d7a436e2061afaa7f68aa9085572cd83e3172cf52ecd30a6101bae
+// limitations: The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.; The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.; Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.; Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.; Ghidra Listing reports a terminal call at 0x10032f798 to 0x1007df1a8 _swift_deallocObject (external=false, thunk=true, hasNoReturn=false); fallthrough is excluded by Ghidra's flow model. The reason for the terminal flow is not established by this observation.; Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.; External functions and functions without an analyzable body return null; other decompiler failures remain explicit.
+// pseudocode: provider-specific; not original source
+
+
+void FUN_10032f710(void)
+
+{
+  long lVar1;
+  long unaff_x20;
+  long lVar2;
+  code *pcVar3;
+  ulong uVar4;
+  ulong uVar5;
+  long lVar6;
+  
+  lVar1 = 0;
+  __s10Foundation10URLRequestVMa();
+  lVar2 = *(long *)(lVar1 + -8);
+  uVar4 = (ulong)*(byte *)(lVar2 + 0x50);
+  uVar5 = uVar4 + 0x18 & (uVar4 ^ 0xffffffffffffffff);
+  lVar6 = *(long *)(lVar2 + 0x40);
+  _swift_release(*(undefined8 *)(unaff_x20 + 0x10));
+  pcVar3 = *(code **)(lVar2 + 8);
+  (*pcVar3)(unaff_x20 + uVar5,lVar1);
+  (*pcVar3)(unaff_x20 + (lVar6 + uVar4 + uVar5 & (uVar4 ^ 0xffffffffffffffff)),lVar1);
+  _swift_deallocObject();
+  return;
+}
+

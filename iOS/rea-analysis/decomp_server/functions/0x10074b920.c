@@ -1,0 +1,125 @@
+// rea decompile_all
+// name: SentryThreadInspector::getCurrentThreadsWithStackTrace
+// address: 0x10074b920
+// body: available
+// range: 0x10074b920-0x10074bc93 inclusive
+// non_contiguous: false
+// provider: Ghidra 12.1.4 (ghidra)
+// analysis_profile: 066f9d6c56d7a436e2061afaa7f68aa9085572cd83e3172cf52ecd30a6101bae
+// limitations: The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.; The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.; Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.; Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.; Ghidra Listing reports a terminal call at 0x10074bc8c to 0x1007de938 _objc_autoreleaseReturnValue (external=false, thunk=true, hasNoReturn=false); fallthrough is excluded by Ghidra's flow model. The reason for the terminal flow is not established by this observation.; Ghidra Listing reports a terminal call at 0x10074bc90 to 0x1007de0bc ___stack_chk_fail (external=false, thunk=true, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.; Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.; External functions and functions without an analyzable body return null; other decompiler failures remain explicit.
+// pseudocode: provider-specific; not original source
+
+
+/* WARNING: Function: _objc_retain replaced with injection: _objc_retain_fixup */
+/* WARNING: Function: _objc_retainAutoreleasedReturnValue replaced with injection:
+   _objc_retain_fixup */
+/* WARNING: Function: _objc_release replaced with injection: _objc_release_fixup */
+/* WARNING: Function: _objc_autoreleaseReturnValue replaced with injection: _objc_retain_fixup */
+/* Function Stack Size: 0x10 bytes */
+
+ID SentryThreadInspector::getCurrentThreadsWithStackTrace(ID param_1,SEL param_2)
+
+{
+  ID self;
+  ID IVar1;
+  ID IVar2;
+  long lVar3;
+  class_t *self_00;
+  ID IVar4;
+  ulong uVar5;
+  ulong uVar6;
+  ulong uVar7;
+  ID *pIVar8;
+  ID IVar9;
+  ID *pIVar10;
+  ID IStack_560;
+  undefined1 *local_558;
+  uint local_54c;
+  long local_548;
+  undefined1 auStack_540 [1232];
+  long local_70;
+  
+  local_70 = *(long *)PTR____stack_chk_guard_1009954a0;
+  self = objc_stub::new((ID)&_OBJC_CLASS___NSMutableArray);
+  IVar1 = param_1;
+  _objc_sync_enter();
+  FUN_1007871b4();
+  local_548 = 0;
+  local_54c = 0;
+  IVar2 = objc_stub::FUN_1007f6ba0(param_1);
+  FUN_10079e95c(&local_548,&local_54c,0x46);
+  if (local_54c != 0) {
+    pIVar10 = &IStack_560 + (ulong)local_54c * -0x1f6;
+    uVar5 = (ulong)local_54c;
+    if (local_54c != 0) {
+      uVar7 = 0;
+      lVar3 = local_548;
+      pIVar8 = pIVar10;
+      do {
+        uVar6 = (ulong)*(uint *)(lVar3 + uVar7 * 4);
+        if (IVar1 == uVar6) {
+          *(undefined4 *)(pIVar8 + 0x1f5) = 0;
+        }
+        else {
+          FUN_10074b354(uVar6,auStack_540,pIVar8 + 1,100,IVar2);
+          *(int *)(pIVar8 + 0x1f5) = (int)uVar6;
+          uVar5 = (ulong)local_54c;
+          lVar3 = local_548;
+        }
+        *pIVar8 = (ulong)*(uint *)(lVar3 + uVar7 * 4);
+        uVar7 = uVar7 + 1;
+        pIVar8 = pIVar8 + 0x1f6;
+      } while (uVar7 < uVar5);
+    }
+    local_558 = (undefined1 *)&IStack_560;
+    FUN_10079ea7c();
+    if (local_54c != 0) {
+      uVar5 = 0;
+      do {
+        self_00 = &objc::class_t::SentryThread;
+        _objc_alloc();
+        IVar2 = objc_stub::numberWithInt_((ID)&_OBJC_CLASS___NSNumber,uVar5);
+        IVar2 = objc_stub::initWithThreadId_((ID)self_00,IVar2);
+        IVar4 = objc_stub::numberWithBool_((ID)&_OBJC_CLASS___NSNumber,(ulong)(uVar5 == 0));
+        objc_stub::FUN_1007f36e0(IVar2,IVar4);
+        Hint_Prefetch(pIVar10 + 0x3ec,0,0,0);
+        IVar4 = objc_stub::FUN_1007ea9e0(param_1,0x1f60,*pIVar10);
+        objc_stub::setName_(IVar2,IVar4);
+        IVar4 = objc_stub::numberWithBool_((ID)&_OBJC_CLASS___NSNumber,0);
+        objc_stub::setCrashed_(IVar2,IVar4);
+        IVar9 = *pIVar10;
+        IVar4 = objc_stub::numberWithBool_((ID)&_OBJC_CLASS___NSNumber,(ulong)(IVar9 == IVar1));
+        objc_stub::FUN_1007f2220(IVar2,IVar4);
+        if (IVar9 == IVar1) {
+          IVar4 = objc_stub::FUN_1007f5d80(param_1);
+          IVar4 = objc_stub::FUN_1007e60e0(IVar4);
+          objc_stub::setStacktrace_(IVar2,IVar4);
+        }
+        else {
+          IVar4 = objc_stub::FUN_1007f5d80(param_1);
+          Hint_Prefetch(pIVar10 + 0x5e1,0,0,0);
+          IVar4 = objc_stub::FUN_1007e60c0
+                            (IVar4,pIVar10 + 0x5e1,pIVar10 + 1,(ulong)(uint)pIVar10[0x1f5]);
+          objc_stub::setStacktrace_(IVar2,IVar4);
+        }
+        IVar4 = objc_stub::FUN_1007edfa0(param_1);
+        IVar4 = objc_stub::FUN_1007ed200(IVar4,*pIVar10);
+        if ((int)IVar4 == 0) {
+          objc_stub::addObject_(self,IVar2);
+        }
+        else {
+          objc_stub::insertObject_atIndex_(self,IVar2,0);
+        }
+        uVar5 = uVar5 + 1;
+        pIVar10 = pIVar10 + 0x1f6;
+      } while (uVar5 < local_54c);
+    }
+  }
+  _objc_sync_exit(param_1);
+  if (*(long *)PTR____stack_chk_guard_1009954a0 != local_70) {
+                    /* WARNING: Subroutine does not return */
+    ___stack_chk_fail(0);
+  }
+  return self;
+}
+

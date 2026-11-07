@@ -1,0 +1,42 @@
+// rea decompile_all
+// name: FUN_1002bcc44
+// address: 0x1002bcc44
+// body: available
+// range: 0x1002bcc44-0x1002bcc83 inclusive
+// non_contiguous: false
+// provider: Ghidra 12.1.4 (ghidra)
+// analysis_profile: 066f9d6c56d7a436e2061afaa7f68aa9085572cd83e3172cf52ecd30a6101bae
+// limitations: The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.; The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.; Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.; Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.; Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.; External functions and functions without an analyzable body return null; other decompiler failures remain explicit.
+// pseudocode: provider-specific; not original source
+
+
+long FUN_1002bcc44(long *param_1,long *param_2)
+
+{
+  code *pcVar1;
+  long lVar2;
+  long lVar3;
+  
+  lVar2 = *param_1;
+  lVar3 = *param_2;
+  if (lVar3 < lVar2) {
+                    /* WARNING: Does not return */
+    pcVar1 = (code *)SoftwareBreakpoint(1,0x1002bcc7c);
+    (*pcVar1)();
+  }
+  if (lVar2 == lVar3) {
+    return 0;
+  }
+  if (lVar3 <= lVar2) {
+                    /* WARNING: Does not return */
+    pcVar1 = (code *)SoftwareBreakpoint(1,0x1002bcc80);
+    (*pcVar1)();
+  }
+  if (0x8000000000000000 < (ulong)(lVar2 - lVar3)) {
+    return lVar3 - lVar2;
+  }
+                    /* WARNING: Does not return */
+  pcVar1 = (code *)SoftwareBreakpoint(1,0x1002bcc84);
+  (*pcVar1)();
+}
+

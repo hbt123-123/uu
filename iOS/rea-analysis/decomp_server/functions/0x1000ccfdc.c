@@ -1,0 +1,124 @@
+// rea decompile_all
+// name: FUN_1000ccfdc
+// address: 0x1000ccfdc
+// body: available
+// range: 0x1000ccfdc-0x1000cd197 inclusive
+// non_contiguous: false
+// provider: Ghidra 12.1.4 (ghidra)
+// analysis_profile: 066f9d6c56d7a436e2061afaa7f68aa9085572cd83e3172cf52ecd30a6101bae
+// limitations: The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.; The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.; Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.; Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.; Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.; External functions and functions without an analyzable body return null; other decompiler failures remain explicit.
+// pseudocode: provider-specific; not original source
+
+
+undefined * FUN_1000ccfdc(long param_1)
+
+{
+  code *pcVar1;
+  undefined *puVar2;
+  ulong uVar3;
+  ulong *puVar4;
+  ulong uVar5;
+  ulong *puVar6;
+  undefined *puVar7;
+  ulong uVar8;
+  ulong uVar9;
+  undefined1 auStack_148 [104];
+  ulong local_e0;
+  ulong uStack_d8;
+  ulong local_d0;
+  ulong uStack_c8;
+  ulong local_c0;
+  ulong uStack_b8;
+  ulong local_b0;
+  ulong uStack_a8;
+  ulong local_a0;
+  ulong uStack_98;
+  ulong local_90;
+  ulong uStack_88;
+  undefined1 local_80;
+  
+  puVar7 = *(undefined **)(param_1 + 0x10);
+  if (puVar7 == (undefined *)0x0) {
+    return PTR___swiftEmptyDictionarySingleton_100995ea8;
+  }
+  FUN_100004bb4(&DAT_100a763c0,&DAT_10080abe8);
+  puVar2 = puVar7;
+  __ss18_DictionaryStorageC8allocate8capacityAByxq_GSi_tFZ();
+  _swift_retain();
+  uStack_98 = *(ulong *)(param_1 + 0x68);
+  local_a0 = *(ulong *)(param_1 + 0x60);
+  uStack_88 = *(ulong *)(param_1 + 0x78);
+  local_90 = *(ulong *)(param_1 + 0x70);
+  local_80 = *(undefined1 *)(param_1 + 0x80);
+  uVar9 = *(ulong *)(param_1 + 0x28);
+  uVar8 = *(ulong *)(param_1 + 0x20);
+  uStack_c8 = *(ulong *)(param_1 + 0x38);
+  local_d0 = *(ulong *)(param_1 + 0x30);
+  uStack_b8 = *(ulong *)(param_1 + 0x48);
+  local_c0 = *(ulong *)(param_1 + 0x40);
+  uStack_a8 = *(ulong *)(param_1 + 0x58);
+  local_b0 = *(ulong *)(param_1 + 0x50);
+  local_e0 = uVar8;
+  uStack_d8 = uVar9;
+  FUN_10007f314(&local_e0,auStack_148,&DAT_100a775e0,&DAT_10080c220);
+  uVar3 = uVar8;
+  uVar5 = uVar9;
+  FUN_1001a2c70();
+  if ((uVar5 & 1) == 0) {
+    puVar4 = (ulong *)(param_1 + 0x88);
+    do {
+      uVar5 = uVar3 >> 3 & 0x1ffffffffffffff8;
+      *(ulong *)(puVar2 + uVar5 + 0x40) = *(ulong *)(puVar2 + uVar5 + 0x40) | 1L << (uVar3 & 0x3f);
+      puVar6 = (ulong *)(*(long *)(puVar2 + 0x30) + uVar3 * 0x10);
+      *puVar6 = uVar8;
+      puVar6[1] = uVar9;
+      puVar6 = (ulong *)(*(long *)(puVar2 + 0x38) + uVar3 * 0x58);
+      puVar6[1] = uStack_c8;
+      *puVar6 = local_d0;
+      puVar6[3] = uStack_b8;
+      puVar6[2] = local_c0;
+      *(undefined1 *)(puVar6 + 10) = local_80;
+      puVar6[7] = uStack_98;
+      puVar6[6] = local_a0;
+      puVar6[9] = uStack_88;
+      puVar6[8] = local_90;
+      puVar6[5] = uStack_a8;
+      puVar6[4] = local_b0;
+      if (SCARRY8(*(long *)(puVar2 + 0x10),1)) {
+                    /* WARNING: Does not return */
+        pcVar1 = (code *)SoftwareBreakpoint(1,0x1000cd198);
+        (*pcVar1)();
+      }
+      *(long *)(puVar2 + 0x10) = *(long *)(puVar2 + 0x10) + 1;
+      puVar7 = puVar7 + -1;
+      if (puVar7 == (undefined *)0x0) {
+        _swift_release(puVar2);
+        return puVar2;
+      }
+      uStack_98 = puVar4[9];
+      local_a0 = puVar4[8];
+      uStack_88 = puVar4[0xb];
+      local_90 = puVar4[10];
+      local_80 = (undefined1)puVar4[0xc];
+      uVar9 = puVar4[1];
+      uVar8 = *puVar4;
+      uStack_c8 = puVar4[3];
+      local_d0 = puVar4[2];
+      uStack_b8 = puVar4[5];
+      local_c0 = puVar4[4];
+      uStack_a8 = puVar4[7];
+      local_b0 = puVar4[6];
+      local_e0 = uVar8;
+      uStack_d8 = uVar9;
+      FUN_10007f314(&local_e0,auStack_148,&DAT_100a775e0,&DAT_10080c220);
+      uVar3 = uVar8;
+      uVar5 = uVar9;
+      FUN_1001a2c70();
+      puVar4 = puVar4 + 0xd;
+    } while ((uVar5 & 1) == 0);
+  }
+                    /* WARNING: Does not return */
+  pcVar1 = (code *)SoftwareBreakpoint(1,0x1000cd15c);
+  (*pcVar1)();
+}
+

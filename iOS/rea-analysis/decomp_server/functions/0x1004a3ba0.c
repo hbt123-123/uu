@@ -1,0 +1,238 @@
+// rea decompile_all
+// name: FUN_1004a3ba0
+// address: 0x1004a3ba0
+// body: available
+// range: 0x1004a3ba0-0x1004a3dab inclusive
+// non_contiguous: false
+// provider: Ghidra 12.1.4 (ghidra)
+// analysis_profile: 066f9d6c56d7a436e2061afaa7f68aa9085572cd83e3172cf52ecd30a6101bae
+// limitations: The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.; The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.; Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.; Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.; Ghidra Listing reports a terminal call at 0x1004a3da8 to 0x1007de5c0 _free (external=false, thunk=true, hasNoReturn=false); fallthrough is excluded by Ghidra's flow model. The reason for the terminal flow is not established by this observation.; Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.; External functions and functions without an analyzable body return null; other decompiler failures remain explicit.
+// pseudocode: provider-specific; not original source
+
+
+void FUN_1004a3ba0(undefined8 *param_1,ulong param_2,code *param_3,code *param_4,code *param_5)
+
+{
+  undefined8 *puVar1;
+  undefined8 *puVar2;
+  void *pvVar3;
+  undefined8 *puVar4;
+  undefined8 uVar5;
+  undefined8 uVar6;
+  undefined8 uVar7;
+  undefined8 uVar8;
+  undefined8 uVar9;
+  undefined8 uVar10;
+  undefined8 uVar11;
+  
+  pvVar3 = (void *)*param_1;
+  puVar1 = (undefined8 *)((long)pvVar3 + 0x198);
+  puVar2 = (undefined8 *)((long)pvVar3 + 0x2a8);
+  if ((param_2 & 1) == 0) {
+    puVar4 = *(undefined8 **)((long)pvVar3 + 0x3a8);
+    *(undefined8 *)((long)pvVar3 + 0x228) = *(undefined8 *)((long)pvVar3 + 0x2b0);
+    *(undefined8 *)((long)pvVar3 + 0x220) = *puVar2;
+    *(undefined8 *)((long)pvVar3 + 0x238) = *(undefined8 *)((long)pvVar3 + 0x2c0);
+    *(undefined8 *)((long)pvVar3 + 0x230) = *(undefined8 *)((long)pvVar3 + 0x2b8);
+    *(undefined8 *)((long)pvVar3 + 0x248) = *(undefined8 *)((long)pvVar3 + 0x2d0);
+    *(undefined8 *)((long)pvVar3 + 0x240) = *(undefined8 *)((long)pvVar3 + 0x2c8);
+    *(undefined8 *)((long)pvVar3 + 600) = *(undefined8 *)((long)pvVar3 + 0x2e0);
+    *(undefined8 *)((long)pvVar3 + 0x250) = *(undefined8 *)((long)pvVar3 + 0x2d8);
+    (*param_3)((long)pvVar3 + 0x220);
+    *(undefined8 *)((long)pvVar3 + 0x200) = *(undefined8 *)((long)pvVar3 + 0x288);
+    *(undefined8 *)((long)pvVar3 + 0x1f8) = *(undefined8 *)((long)pvVar3 + 0x280);
+    *(undefined8 *)((long)pvVar3 + 0x210) = *(undefined8 *)((long)pvVar3 + 0x298);
+    *(undefined8 *)((long)pvVar3 + 0x208) = *(undefined8 *)((long)pvVar3 + 0x290);
+    *(undefined1 *)((long)pvVar3 + 0x218) = *(undefined1 *)((long)pvVar3 + 0x2a0);
+    *(undefined8 *)((long)pvVar3 + 0x1c0) = *(undefined8 *)((long)pvVar3 + 0x248);
+    *(undefined8 *)((long)pvVar3 + 0x1b8) = *(undefined8 *)((long)pvVar3 + 0x240);
+    *(undefined8 *)((long)pvVar3 + 0x1d0) = *(undefined8 *)((long)pvVar3 + 600);
+    *(undefined8 *)((long)pvVar3 + 0x1c8) = *(undefined8 *)((long)pvVar3 + 0x250);
+    *(undefined8 *)((long)pvVar3 + 0x1e0) = *(undefined8 *)((long)pvVar3 + 0x268);
+    *(undefined8 *)((long)pvVar3 + 0x1d8) = *(undefined8 *)((long)pvVar3 + 0x260);
+    *(undefined8 *)((long)pvVar3 + 0x1f0) = *(undefined8 *)((long)pvVar3 + 0x278);
+    *(undefined8 *)((long)pvVar3 + 0x1e8) = *(undefined8 *)((long)pvVar3 + 0x270);
+    *(undefined8 *)((long)pvVar3 + 0x1a0) = *(undefined8 *)((long)pvVar3 + 0x228);
+    *puVar1 = *(undefined8 *)((long)pvVar3 + 0x220);
+    *(undefined8 *)((long)pvVar3 + 0x1b0) = *(undefined8 *)((long)pvVar3 + 0x238);
+    *(undefined8 *)((long)pvVar3 + 0x1a8) = *(undefined8 *)((long)pvVar3 + 0x230);
+    FUN_100008290(puVar1);
+    uVar5 = *puVar4;
+    *(undefined8 *)((long)pvVar3 + 0x118) = puVar4[1];
+    *(undefined8 *)((long)pvVar3 + 0x110) = uVar5;
+    uVar6 = puVar4[3];
+    uVar5 = puVar4[2];
+    uVar8 = puVar4[5];
+    uVar7 = puVar4[4];
+    uVar9 = puVar4[6];
+    uVar11 = puVar4[9];
+    uVar10 = puVar4[8];
+    *(undefined8 *)((long)pvVar3 + 0x148) = puVar4[7];
+    *(undefined8 *)((long)pvVar3 + 0x140) = uVar9;
+    *(undefined8 *)((long)pvVar3 + 0x158) = uVar11;
+    *(undefined8 *)((long)pvVar3 + 0x150) = uVar10;
+    *(undefined8 *)((long)pvVar3 + 0x128) = uVar6;
+    *(undefined8 *)((long)pvVar3 + 0x120) = uVar5;
+    *(undefined8 *)((long)pvVar3 + 0x138) = uVar8;
+    *(undefined8 *)((long)pvVar3 + 0x130) = uVar7;
+    uVar6 = puVar4[0xb];
+    uVar5 = puVar4[10];
+    uVar8 = puVar4[0xd];
+    uVar7 = puVar4[0xc];
+    uVar10 = puVar4[0xf];
+    uVar9 = puVar4[0xe];
+    *(undefined1 *)((long)pvVar3 + 400) = *(undefined1 *)(puVar4 + 0x10);
+    *(undefined8 *)((long)pvVar3 + 0x178) = uVar8;
+    *(undefined8 *)((long)pvVar3 + 0x170) = uVar7;
+    *(undefined8 *)((long)pvVar3 + 0x188) = uVar10;
+    *(undefined8 *)((long)pvVar3 + 0x180) = uVar9;
+    *(undefined8 *)((long)pvVar3 + 0x168) = uVar6;
+    *(undefined8 *)((long)pvVar3 + 0x160) = uVar5;
+    FUN_100040bb4((long)pvVar3 + 0x110,&DAT_100aa1378,&DAT_100830238);
+    uVar5 = *puVar1;
+    puVar4[1] = *(undefined8 *)((long)pvVar3 + 0x1a0);
+    *puVar4 = uVar5;
+    uVar5 = *(undefined8 *)((long)pvVar3 + 0x1c8);
+    uVar7 = *(undefined8 *)((long)pvVar3 + 0x1e0);
+    uVar6 = *(undefined8 *)((long)pvVar3 + 0x1d8);
+    uVar11 = *(undefined8 *)((long)pvVar3 + 0x1b0);
+    uVar10 = *(undefined8 *)((long)pvVar3 + 0x1a8);
+    uVar9 = *(undefined8 *)((long)pvVar3 + 0x1c0);
+    uVar8 = *(undefined8 *)((long)pvVar3 + 0x1b8);
+    puVar4[7] = *(undefined8 *)((long)pvVar3 + 0x1d0);
+    puVar4[6] = uVar5;
+    puVar4[9] = uVar7;
+    puVar4[8] = uVar6;
+    puVar4[3] = uVar11;
+    puVar4[2] = uVar10;
+    puVar4[5] = uVar9;
+    puVar4[4] = uVar8;
+    uVar8 = *(undefined8 *)((long)pvVar3 + 0x200);
+    uVar7 = *(undefined8 *)((long)pvVar3 + 0x1f8);
+    uVar6 = *(undefined8 *)((long)pvVar3 + 0x210);
+    uVar5 = *(undefined8 *)((long)pvVar3 + 0x208);
+    uVar10 = *(undefined8 *)((long)pvVar3 + 0x1f0);
+    uVar9 = *(undefined8 *)((long)pvVar3 + 0x1e8);
+    *(undefined1 *)(puVar4 + 0x10) = *(undefined1 *)((long)pvVar3 + 0x218);
+    puVar4[0xd] = uVar8;
+    puVar4[0xc] = uVar7;
+    puVar4[0xf] = uVar6;
+    puVar4[0xe] = uVar5;
+    puVar4[0xb] = uVar10;
+    puVar4[10] = uVar9;
+  }
+  else {
+    puVar4 = *(undefined8 **)((long)pvVar3 + 0x3a8);
+    *(undefined8 *)((long)pvVar3 + 0x330) = *(undefined8 *)((long)pvVar3 + 0x2b0);
+    *(undefined8 *)((long)pvVar3 + 0x328) = *puVar2;
+    *(undefined8 *)((long)pvVar3 + 0x340) = *(undefined8 *)((long)pvVar3 + 0x2c0);
+    *(undefined8 *)((long)pvVar3 + 0x338) = *(undefined8 *)((long)pvVar3 + 0x2b8);
+    *(undefined8 *)((long)pvVar3 + 0x350) = *(undefined8 *)((long)pvVar3 + 0x2d0);
+    *(undefined8 *)((long)pvVar3 + 0x348) = *(undefined8 *)((long)pvVar3 + 0x2c8);
+    *(undefined8 *)((long)pvVar3 + 0x360) = *(undefined8 *)((long)pvVar3 + 0x2e0);
+    *(undefined8 *)((long)pvVar3 + 0x358) = *(undefined8 *)((long)pvVar3 + 0x2d8);
+    *(undefined8 *)((long)pvVar3 + 0x228) = *(undefined8 *)((long)pvVar3 + 0x2b0);
+    *(undefined8 *)((long)pvVar3 + 0x220) = *puVar2;
+    *(undefined8 *)((long)pvVar3 + 0x238) = *(undefined8 *)((long)pvVar3 + 0x2c0);
+    *(undefined8 *)((long)pvVar3 + 0x230) = *(undefined8 *)((long)pvVar3 + 0x2b8);
+    *(undefined8 *)((long)pvVar3 + 0x248) = *(undefined8 *)((long)pvVar3 + 0x2d0);
+    *(undefined8 *)((long)pvVar3 + 0x240) = *(undefined8 *)((long)pvVar3 + 0x2c8);
+    *(undefined8 *)((long)pvVar3 + 600) = *(undefined8 *)((long)pvVar3 + 0x2e0);
+    *(undefined8 *)((long)pvVar3 + 0x250) = *(undefined8 *)((long)pvVar3 + 0x2d8);
+    (*param_3)((long)pvVar3 + 0x220);
+    *(undefined8 *)((long)pvVar3 + 0x200) = *(undefined8 *)((long)pvVar3 + 0x288);
+    *(undefined8 *)((long)pvVar3 + 0x1f8) = *(undefined8 *)((long)pvVar3 + 0x280);
+    *(undefined8 *)((long)pvVar3 + 0x210) = *(undefined8 *)((long)pvVar3 + 0x298);
+    *(undefined8 *)((long)pvVar3 + 0x208) = *(undefined8 *)((long)pvVar3 + 0x290);
+    *(undefined1 *)((long)pvVar3 + 0x218) = *(undefined1 *)((long)pvVar3 + 0x2a0);
+    *(undefined8 *)((long)pvVar3 + 0x1c0) = *(undefined8 *)((long)pvVar3 + 0x248);
+    *(undefined8 *)((long)pvVar3 + 0x1b8) = *(undefined8 *)((long)pvVar3 + 0x240);
+    *(undefined8 *)((long)pvVar3 + 0x1d0) = *(undefined8 *)((long)pvVar3 + 600);
+    *(undefined8 *)((long)pvVar3 + 0x1c8) = *(undefined8 *)((long)pvVar3 + 0x250);
+    *(undefined8 *)((long)pvVar3 + 0x1e0) = *(undefined8 *)((long)pvVar3 + 0x268);
+    *(undefined8 *)((long)pvVar3 + 0x1d8) = *(undefined8 *)((long)pvVar3 + 0x260);
+    *(undefined8 *)((long)pvVar3 + 0x1f0) = *(undefined8 *)((long)pvVar3 + 0x278);
+    *(undefined8 *)((long)pvVar3 + 0x1e8) = *(undefined8 *)((long)pvVar3 + 0x270);
+    *(undefined8 *)((long)pvVar3 + 0x1a0) = *(undefined8 *)((long)pvVar3 + 0x228);
+    *puVar1 = *(undefined8 *)((long)pvVar3 + 0x220);
+    *(undefined8 *)((long)pvVar3 + 0x1b0) = *(undefined8 *)((long)pvVar3 + 0x238);
+    *(undefined8 *)((long)pvVar3 + 0x1a8) = *(undefined8 *)((long)pvVar3 + 0x230);
+    FUN_100008290(puVar1);
+    uVar5 = *puVar4;
+    *(undefined8 *)((long)pvVar3 + 0x118) = puVar4[1];
+    *(undefined8 *)((long)pvVar3 + 0x110) = uVar5;
+    uVar6 = puVar4[3];
+    uVar5 = puVar4[2];
+    uVar8 = puVar4[5];
+    uVar7 = puVar4[4];
+    uVar9 = puVar4[6];
+    uVar11 = puVar4[9];
+    uVar10 = puVar4[8];
+    *(undefined8 *)((long)pvVar3 + 0x148) = puVar4[7];
+    *(undefined8 *)((long)pvVar3 + 0x140) = uVar9;
+    *(undefined8 *)((long)pvVar3 + 0x158) = uVar11;
+    *(undefined8 *)((long)pvVar3 + 0x150) = uVar10;
+    *(undefined8 *)((long)pvVar3 + 0x128) = uVar6;
+    *(undefined8 *)((long)pvVar3 + 0x120) = uVar5;
+    *(undefined8 *)((long)pvVar3 + 0x138) = uVar8;
+    *(undefined8 *)((long)pvVar3 + 0x130) = uVar7;
+    uVar6 = puVar4[0xb];
+    uVar5 = puVar4[10];
+    uVar8 = puVar4[0xd];
+    uVar7 = puVar4[0xc];
+    uVar10 = puVar4[0xf];
+    uVar9 = puVar4[0xe];
+    *(undefined1 *)((long)pvVar3 + 400) = *(undefined1 *)(puVar4 + 0x10);
+    *(undefined8 *)((long)pvVar3 + 0x178) = uVar8;
+    *(undefined8 *)((long)pvVar3 + 0x170) = uVar7;
+    *(undefined8 *)((long)pvVar3 + 0x188) = uVar10;
+    *(undefined8 *)((long)pvVar3 + 0x180) = uVar9;
+    *(undefined8 *)((long)pvVar3 + 0x168) = uVar6;
+    *(undefined8 *)((long)pvVar3 + 0x160) = uVar5;
+    (*param_4)((undefined8 *)((long)pvVar3 + 0x328),(long)pvVar3 + 0x368);
+    FUN_100040bb4((long)pvVar3 + 0x110,&DAT_100aa1378,&DAT_100830238);
+    uVar5 = *puVar1;
+    puVar4[1] = *(undefined8 *)((long)pvVar3 + 0x1a0);
+    *puVar4 = uVar5;
+    uVar5 = *(undefined8 *)((long)pvVar3 + 0x1c8);
+    uVar7 = *(undefined8 *)((long)pvVar3 + 0x1e0);
+    uVar6 = *(undefined8 *)((long)pvVar3 + 0x1d8);
+    uVar11 = *(undefined8 *)((long)pvVar3 + 0x1b0);
+    uVar10 = *(undefined8 *)((long)pvVar3 + 0x1a8);
+    uVar9 = *(undefined8 *)((long)pvVar3 + 0x1c0);
+    uVar8 = *(undefined8 *)((long)pvVar3 + 0x1b8);
+    puVar4[7] = *(undefined8 *)((long)pvVar3 + 0x1d0);
+    puVar4[6] = uVar5;
+    puVar4[9] = uVar7;
+    puVar4[8] = uVar6;
+    puVar4[3] = uVar11;
+    puVar4[2] = uVar10;
+    puVar4[5] = uVar9;
+    puVar4[4] = uVar8;
+    uVar8 = *(undefined8 *)((long)pvVar3 + 0x200);
+    uVar7 = *(undefined8 *)((long)pvVar3 + 0x1f8);
+    uVar6 = *(undefined8 *)((long)pvVar3 + 0x210);
+    uVar5 = *(undefined8 *)((long)pvVar3 + 0x208);
+    uVar10 = *(undefined8 *)((long)pvVar3 + 0x1f0);
+    uVar9 = *(undefined8 *)((long)pvVar3 + 0x1e8);
+    *(undefined1 *)(puVar4 + 0x10) = *(undefined1 *)((long)pvVar3 + 0x218);
+    puVar4[0xd] = uVar8;
+    puVar4[0xc] = uVar7;
+    puVar4[0xf] = uVar6;
+    puVar4[0xe] = uVar5;
+    puVar4[0xb] = uVar10;
+    puVar4[10] = uVar9;
+    *(undefined8 *)((long)pvVar3 + 0x2f0) = *(undefined8 *)((long)pvVar3 + 0x2b0);
+    *(undefined8 *)((long)pvVar3 + 0x2e8) = *puVar2;
+    *(undefined8 *)((long)pvVar3 + 0x300) = *(undefined8 *)((long)pvVar3 + 0x2c0);
+    *(undefined8 *)((long)pvVar3 + 0x2f8) = *(undefined8 *)((long)pvVar3 + 0x2b8);
+    *(undefined8 *)((long)pvVar3 + 0x310) = *(undefined8 *)((long)pvVar3 + 0x2d0);
+    *(undefined8 *)((long)pvVar3 + 0x308) = *(undefined8 *)((long)pvVar3 + 0x2c8);
+    *(undefined8 *)((long)pvVar3 + 800) = *(undefined8 *)((long)pvVar3 + 0x2e0);
+    *(undefined8 *)((long)pvVar3 + 0x318) = *(undefined8 *)((long)pvVar3 + 0x2d8);
+    (*param_5)((undefined8 *)((long)pvVar3 + 0x2e8));
+  }
+  _free(pvVar3);
+  return;
+}
+

@@ -1,0 +1,569 @@
+#!/usr/bin/env bash
+
+# 定义文件路径
+AGENT_PLIST="/Library/LaunchAgents/com.netease.uuremote.agent.plist"
+DAEMON_PLIST="/Library/LaunchDaemons/com.netease.uuremote.daemon.plist"
+
+# 获取当前控制台用户的函数
+get_console_user() {
+    local console_user
+    
+    # 优先使用 scutil 获取控制台用户
+    console_user=$(scutil <<< "show State:/Users/ConsoleUser" | awk '/Name :/ && ! /loginwindow/ { print $3 }')
+    
+    # 如果 scutil 失败或返回 root，尝试从 stat 获取
+    if [ -z "$console_user" ] || [ "$console_user" = "root" ]; then
+        console_user=$(stat -f "%Su" /dev/console 2>/dev/null)
+    fi
+    
+    # 如果还是失败或返回 root，尝试从 who 获取
+    if [ -z "$console_user" ] || [ "$console_user" = "root" ]; then
+        console_user=$(who | grep console | awk '{print $1}' | head -n 1)
+    fi
+    
+    # 如果所有方法都失败，尝试从 /dev/console 所有者获取
+    if [ -z "$console_user" ] || [ "$console_user" = "root" ]; then
+        console_user=$(ls -ld /dev/console | awk '{print $3}')
+    fi
+    
+    # 最后的兜底：使用 501 对应的用户
+    if [ -z "$console_user" ] || [ "$console_user" = "root" ]; then
+        console_user=$(dscl . list /Users UniqueID | awk '$2 == 501 {print $1}')
+    fi
+    
+    echo "$console_user"
+}
+
+# 获取当前用户信息
+CURRENT_USER=$(get_console_user)
+CURRENT_UID=$(id -u "$CURRENT_USER" 2>/dev/null || echo "501")
+
+echo "开始配置 UURemote 服务..."
+echo "当前用户: $CURRENT_USER (UID: $CURRENT_UID)"
+
+# ================== 清理历史遗留用户级别 LaunchAgent ==================
+OLD_USER_AGENT_LABEL="com.163.UURemote.Agent"
+OLD_USER_AGENT_PLIST="/Users/$CURRENT_USER/Library/LaunchAgents/com.netease.uuremote.plist"
+echo "检查是否存在历史遗留用户级别 Agent: $OLD_USER_AGENT_LABEL"
+if [ -f "$OLD_USER_AGENT_PLIST" ]; then
+    echo "发现旧的 plist: $OLD_USER_AGENT_PLIST"
+    # 尝试停止旧服务
+    if launchctl print gui/$CURRENT_UID/$OLD_USER_AGENT_LABEL >/dev/null 2>&1; then
+        echo "旧服务正在运行，尝试停止..."
+        if launchctl bootout gui/$CURRENT_UID "$OLD_USER_AGENT_PLIST" 2>/dev/null; then
+            echo "✓ 已停止旧服务 (bootout)"
+        else
+            # 兜底使用 remove (部分旧系统 / 旧用法)
+            if launchctl remove "$OLD_USER_AGENT_LABEL" 2>/dev/null; then
+                echo "✓ 已通过 remove 停止旧服务"
+            else
+                echo "⚠ 停止旧服务失败 (可能已退出)"
+            fi
+        fi
+    else
+        echo "旧服务未在运行 (或已停止)"
+    fi
+
+    # 直接删除
+    if rm -f "$OLD_USER_AGENT_PLIST" 2>/dev/null; then
+        echo "✓ 已直接删除旧的用户级别 Agent plist (未做备份)"
+    else
+        echo "✗ 删除旧的用户级别 Agent plist 失败"
+    fi
+else
+    echo "未发现旧的用户级别 Agent plist，无需清理"
+fi
+echo "历史遗留 Agent 清理完成"
+# ======================================================================
+
+# 检查程序签名状态的函数
+check_program_signature() {
+    local program_path="$1"
+    local service_name="$2"
+    
+    echo "检查 $service_name 程序签名状态..."
+    
+    # 检查是否有签名
+    if codesign -v "$program_path" 2>/dev/null; then
+        echo "✓ $service_name 程序已签名"
+        
+        # 检查签名类型
+    local sign_info
+    sign_info=$(codesign -dv "$program_path" 2>&1)
+        if echo "$sign_info" | grep -q "Developer ID"; then
+            echo "✓ $service_name 使用 Developer ID 签名"
+        elif echo "$sign_info" | grep -q "adhoc"; then
+            echo "⚠ $service_name 使用 ad-hoc 签名 (开发版本)"
+        else
+            echo "⚠ $service_name 使用其他类型签名"
+        fi
+        
+        # 显示签名证书信息
+    local cert_info
+    cert_info=$(echo "$sign_info" | grep "Authority=" | head -1)
+        if [ -n "$cert_info" ]; then
+            echo "✓ $service_name 签名证书: $cert_info"
+        fi
+        
+    else
+        echo "⚠ $service_name 程序未签名 (debug 版本)"
+        echo "注意: 未签名程序可能无法通过 launchctl 启动"
+    fi
+    
+    return 0
+}
+
+# 检查 plist 配置的函数
+check_plist_config() {
+    local plist_path="$1"
+    local service_name="$2"
+    
+    if [ ! -f "$plist_path" ]; then
+        echo "✗ $service_name plist 文件不存在: $plist_path"
+        return 1
+    fi
+    
+    echo "检查 $service_name plist 配置..."
+    
+    # 1. 检查 plist 格式
+    if ! plutil -lint "$plist_path" >/dev/null 2>&1; then
+        echo "✗ $service_name plist 格式无效"
+        plutil -lint "$plist_path"
+        return 1
+    fi
+    echo "✓ $service_name plist 格式正确"
+    
+    # 2. 检查必需的键
+    local label
+    label=$(plutil -extract Label raw "$plist_path" 2>/dev/null)
+    if [ -z "$label" ]; then
+        echo "✗ $service_name plist 缺少 Label 键"
+        return 1
+    fi
+    echo "✓ $service_name Label: $label"
+    
+    # 3. 检查程序路径 - 优先检查 ProgramArguments
+    local prog_args
+    prog_args=$(plutil -extract ProgramArguments.0 raw "$plist_path" 2>/dev/null)
+    if [ -n "$prog_args" ]; then
+        # 使用 ProgramArguments
+        if [ ! -f "$prog_args" ]; then
+            echo "✗ $service_name 程序文件不存在: $prog_args"
+            return 1
+        fi
+        echo "✓ $service_name 程序文件存在: $prog_args"
+        
+        # 检查是否可执行
+        if [ ! -x "$prog_args" ]; then
+            echo "⚠ $service_name 程序文件不可执行: $prog_args"
+            # 尝试修复权限
+            chmod +x "$prog_args" 2>/dev/null && echo "✓ 已修复 $service_name 程序执行权限"
+        fi
+        
+        # 检查程序签名
+        check_program_signature "$prog_args" "$service_name"
+    else
+        # 检查 Program（兜底）
+    local program
+    program=$(plutil -extract Program raw "$plist_path" 2>/dev/null)
+        if [ -n "$program" ]; then
+            if [ ! -f "$program" ]; then
+                echo "✗ $service_name 程序文件不存在: $program"
+                return 1
+            fi
+            echo "✓ $service_name 程序文件存在: $program"
+            
+            # 检查是否可执行
+            if [ ! -x "$program" ]; then
+                echo "⚠ $service_name 程序文件不可执行: $program"
+                # 尝试修复权限
+                chmod +x "$program" 2>/dev/null && echo "✓ 已修复 $service_name 程序执行权限"
+            fi
+            
+            # 检查程序签名
+            check_program_signature "$program" "$service_name"
+        else
+            echo "✗ $service_name plist 缺少 Program 或 ProgramArguments"
+            return 1
+        fi
+    fi
+    
+    # 5. 检查文件权限
+    local perms
+    perms=$(stat -f "%OLp" "$plist_path")
+    if [ "$perms" != "644" ]; then
+        echo "⚠ $service_name plist 权限不正确 ($perms)，将修正为 644"
+        chmod 644 "$plist_path"
+    fi
+    
+    echo "✓ $service_name plist 配置检查完成"
+    return 0
+}
+
+# 安全停止服务的函数
+stop_service() {
+    local plist_path="$1"
+    local service_name="$2"
+    
+    if [ ! -f "$plist_path" ]; then
+        echo "注意: $service_name plist 文件不存在，跳过停止操作"
+        return 0
+    fi
+    
+    echo "停止 $service_name 服务..."
+    
+    # 根据文件位置选择正确的域
+    if [[ "$plist_path" == *"/LaunchAgents/"* ]]; then
+        # LaunchAgent 使用用户域
+        if launchctl bootout gui/$CURRENT_UID "$plist_path" 2>/dev/null; then
+            echo "✓ $service_name 服务已停止"
+        else
+            echo "注意: $service_name 服务可能未运行或已停止"
+        fi
+    else
+        # LaunchDaemon 使用系统域
+        if launchctl bootout system "$plist_path" 2>/dev/null; then
+            echo "✓ $service_name 服务已停止"
+        else
+            echo "注意: $service_name 服务可能未运行或已停止"
+        fi
+    fi
+}
+
+# 安全启动服务的函数
+start_service() {
+    local plist_path="$1"
+    local service_name="$2"
+    
+    # 设置正确的文件权限
+    echo "设置 $service_name plist 文件权限..."
+    if [[ "$plist_path" == *"/LaunchDaemons/"* ]]; then
+        # LaunchDaemon 需要 root:wheel 所有权
+        chown root:wheel "$plist_path"
+        chmod 644 "$plist_path"
+        echo "✓ $service_name plist 权限已设置为 root:wheel 644"
+    else
+        # LaunchAgent 需要 root:wheel 所有权
+        chown root:wheel "$plist_path"
+        chmod 644 "$plist_path"
+        echo "✓ $service_name plist 权限已设置为 root:wheel 644"
+    fi
+    
+    # if ! check_plist_config "$plist_path" "$service_name"; then
+    #     echo "✗ $service_name 配置检查失败，跳过启动"
+    #     return 1
+    # fi
+    
+    # 获取服务 label
+    local label
+    label=$(plutil -extract Label raw "$plist_path" 2>/dev/null)
+    if [ -z "$label" ]; then
+        echo "✗ 无法从 $service_name plist 获取 Label，跳过启动"
+        return 1
+    fi
+    
+    # 根据文件位置确定域
+    local domain
+    if [[ "$plist_path" == *"/LaunchAgents/"* ]]; then
+        domain="gui/$CURRENT_UID"
+    else
+        domain="system"
+    fi
+    
+    # 先 enable 服务（防止之前被 disable）
+    echo "enable $service_name ..."
+    if launchctl enable "$domain/$label" 2>/dev/null; then
+        echo "✓ $domain/$label enabled"
+    else
+        echo "注意: $domain/$label 服务 enable 失败或已启用"
+    fi
+    
+    echo "启动 $service_name 服务..."
+    
+    # 根据文件位置选择正确的域
+    local success=false
+    if [[ "$plist_path" == *"/LaunchAgents/"* ]]; then
+        # LaunchAgent 使用用户域
+        if launchctl bootstrap gui/$CURRENT_UID "$plist_path" 2>/dev/null; then
+            success=true
+        fi
+    else
+        # LaunchDaemon 使用系统域
+        if launchctl bootstrap system "$plist_path" 2>/dev/null; then
+            success=true
+        fi
+    fi
+    
+    if [ "$success" = true ]; then
+        echo "✓ $service_name 服务启动成功"
+        return 0
+    else
+        echo "✗ $service_name 服务启动失败"
+        # 显示详细错误信息
+        echo "详细错误信息:"
+        if [[ "$plist_path" == *"/LaunchAgents/"* ]]; then
+            launchctl bootstrap gui/$CURRENT_UID "$plist_path"
+        else
+            launchctl bootstrap system "$plist_path"
+        fi
+        
+        # 尝试诊断失败原因
+        echo "诊断 $service_name 启动失败原因:"
+        local prog_path
+        prog_path=$(plutil -extract ProgramArguments.0 raw "$plist_path" 2>/dev/null)
+        if [ -z "$prog_path" ]; then
+            prog_path=$(plutil -extract Program raw "$plist_path" 2>/dev/null)
+        fi
+        
+        if [ -n "$prog_path" ]; then
+            if [ ! -f "$prog_path" ]; then
+                echo "- 程序文件不存在: $prog_path"
+            elif [ ! -x "$prog_path" ]; then
+                echo "- 程序文件不可执行: $prog_path"
+            elif ! codesign -v "$prog_path" 2>/dev/null; then
+                echo "- 程序未签名，可能被系统安全策略阻止"
+            else
+                echo "- 可能是其他配置问题，请检查 plist 内容"
+            fi
+        fi
+        
+        return 1
+    fi
+}
+
+# 执行主流程
+echo "========== 停止现有服务 =========="
+stop_service "$AGENT_PLIST" "Agent"
+stop_service "$DAEMON_PLIST" "Daemon"
+
+# 等待服务完全停止
+sleep 1
+
+echo "========== 启动服务 =========="
+start_service "$AGENT_PLIST" "Agent"
+start_service "$DAEMON_PLIST" "Daemon"
+
+echo "服务配置完成"
+
+
+# 显示服务状态摘要
+echo "========== 服务状态摘要 =========="
+if [ -f "$AGENT_PLIST" ]; then
+    if launchctl print gui/$CURRENT_UID/com.netease.uuremote.agent >/dev/null 2>&1; then
+        echo "✓ Agent 服务运行中"
+    else
+        echo "✗ Agent 服务未运行"
+    fi
+else
+    echo "- Agent 服务未配置"
+fi
+
+if [ -f "$DAEMON_PLIST" ]; then
+    if launchctl print system/com.netease.uuremote.daemon >/dev/null 2>&1; then
+        echo "✓ Daemon 服务运行中"
+    else
+        echo "✗ Daemon 服务未运行"
+    fi
+else
+    echo "- Daemon 服务未配置"
+fi
+
+
+# 设置xpc service程序root权限的通用函数
+set_helper_permissions() {
+    local helper_path="$1"
+    local helper_name="$2"
+    
+    echo "========== 设置 $helper_name 权限 =========="
+    echo "策略: 启用 setuid，权限设为 4755 (rwsr-xr-x)"
+    if [ -f "$helper_path" ]; then
+        echo "找到 $helper_name 可执行文件: $helper_path"
+        # 修改所有者
+        if chown root:wheel "$helper_path" 2>/dev/null; then
+            echo "✓ 已设置所有者为 root:wheel"
+        else
+            echo "✗ 设置所有者为 root:wheel 失败"
+        fi
+
+        # 设置 4755 (setuid + 755)
+        if chmod 4755 "$helper_path" 2>/dev/null; then
+            echo "✓ 已设置权限为 4755"
+        else
+            echo "✗ 设置权限 4755 失败"
+        fi
+
+        # 校验 setuid 是否生效（使用 POSIX -u 测试而不是解析 stat 数值）
+        if [ -u "$helper_path" ]; then
+            echo "✓ 校验通过: setuid 位已生效 (检测方式: [ -u file ])"
+        else
+            echo "⚠ 检测: 未见 setuid 位 ( [ -u file ] 返回假 )"
+        fi
+
+        # 展示最终权限行
+        ls -l "$helper_path" || true
+    else
+        echo "✗ 未找到 $helper_name 可执行文件: $helper_path"
+    fi
+    echo "========== $helper_name 权限设置完成 =========="
+}
+
+# 设置 Updater 下的 Helper 权限
+HELPER_EXEC_UPDATER="/Applications/UURemote.app/Contents/Helpers/UURemoteUpdater.app/Contents/XPCServices/UURemoteHelper.xpc/Contents/MacOS/UURemoteHelper"
+set_helper_permissions "$HELPER_EXEC_UPDATER" "Updater Helper"
+
+# 设置主应用下的 Helper 权限
+HELPER_EXEC_MAIN="/Applications/UURemote.app/Contents/XPCServices/UURemoteHelper.xpc/Contents/MacOS/UURemoteHelper"
+set_helper_permissions "$HELPER_EXEC_MAIN" "Main App Helper"
+
+
+# ================== 创建 uuyc-cli CLI 符号链接 ==================
+setup_cli_symlink() {
+    echo "========== 设置 uuyc-cli CLI 符号链接 =========="
+
+    local install_root="${target_volume:-/}"
+    local CLI_SOURCE="${install_root%/}/Applications/UURemote.app/Contents/Helpers/uuyc-cli"
+    local CLI_TARGET="${install_root%/}/usr/local/bin/uuyc-cli"
+    
+    # 检查 CLI 源文件是否存在
+    if [ ! -f "$CLI_SOURCE" ]; then
+        echo "⚠ CLI 源文件不存在: $CLI_SOURCE"
+        echo "  请确保 UURemoteCLI 已被正确嵌入主应用"
+        return 1
+    fi
+    
+    echo "✓ 找到 CLI 源文件: $CLI_SOURCE"
+    
+    # 清理旧版 uuremote 符号链接残留
+    local OLD_CLI="${install_root%/}/usr/local/bin/uuremote"
+    if [ -L "$OLD_CLI" ] || [ -f "$OLD_CLI" ]; then
+        rm -f "$OLD_CLI" 2>/dev/null
+        echo "✓ 已清理旧版残留: $OLD_CLI"
+    fi
+    
+    # 确保 /usr/local/bin 目录存在
+    if [ ! -d "${install_root%/}/usr/local/bin" ]; then
+        echo "创建 ${install_root%/}/usr/local/bin 目录..."
+        if mkdir -p "${install_root%/}/usr/local/bin" 2>/dev/null; then
+            echo "✓ 已创建 /usr/local/bin 目录"
+        else
+            echo "✗ 创建 /usr/local/bin 目录失败"
+            return 1
+        fi
+    fi
+    
+    # 移除旧的符号链接（如果存在）
+    if [ -L "$CLI_TARGET" ]; then
+        echo "移除旧的符号链接..."
+        rm -f "$CLI_TARGET" 2>/dev/null
+    elif [ -f "$CLI_TARGET" ]; then
+        echo "⚠ 目标位置存在文件（非符号链接），将备份并替换"
+        mv "$CLI_TARGET" "${CLI_TARGET}.bak" 2>/dev/null
+    fi
+    
+    # 创建新的符号链接
+    if ln -sf "$CLI_SOURCE" "$CLI_TARGET" 2>/dev/null; then
+        echo "✓ 已创建符号链接: $CLI_TARGET -> $CLI_SOURCE"
+        
+        # 验证符号链接
+        if [ -L "$CLI_TARGET" ] && [ -x "$CLI_TARGET" ]; then
+            echo "✓ 符号链接验证通过"
+            # 显示版本信息（如果主应用正在运行）
+            if "$CLI_TARGET" --version 2>/dev/null; then
+                echo "✓ CLI 可正常执行"
+            else
+                echo "注意: CLI 需要主应用运行才能正常工作"
+            fi
+        fi
+    else
+        echo "✗ 创建符号链接失败"
+        echo "  请手动执行: sudo ln -sf $CLI_SOURCE $CLI_TARGET"
+        return 1
+    fi
+    
+    echo "========== CLI 符号链接设置完成 =========="
+    return 0
+}
+
+# 1、打印参数
+script_path=$0
+echo "入参-script_path:${script_path}"
+package_path=$1
+echo "入参-package_path:${package_path}"
+default_location=$2
+echo "入参-default_location:${default_location}"
+target_volume=$3
+echo "入参-target_volume:${target_volume}"
+
+# 执行 CLI 符号链接设置
+setup_cli_symlink
+
+# 2、提取文件名
+filename="${package_path##*/}"
+basename="${filename%.*}"
+if [[ "$basename" == *_*_* ]]; then
+    channel_name="${basename#*_}"
+    channel_name="${channel_name#*_}"
+else
+    channel_name="gwqd"
+fi
+
+# 渠道长度至少2个字符，数字或英文字母之间可用下划线、中划线分隔
+channel_pattern='^[a-zA-Z0-9]+([_-][a-zA-Z0-9]+)*$'
+if [ ${#channel_name} -lt 2 ] || [[ ! "$channel_name" =~ $channel_pattern ]]; then
+    echo "⚠ 渠道名不符合规则，回退官网渠道gwqd"
+    channel_name="gwqd"
+fi
+echo "渠道名-channel_name:${channel_name}"
+
+# 确保新渠道不是nochannel，才执行更改
+if [ "$channel_name" != "nochannel" ]; then
+    # 3、找到app路径
+    app_path=$(pkgutil --files "com.netease.uuremote" | grep '\/UURemote.app$' | head -n1)
+    if [ -z "$app_path" ]; then
+        # pkgutil 未找到，尝试使用常规安装路径作为回退
+        if [ -d "/Applications/UURemote.app" ]; then
+            app_path="Applications/UURemote.app"
+            echo "pkgutil 未找到，使用默认路径: /$app_path"
+        else
+            echo "✗ 未找到 UURemote.app（pkgutil 与默认路径均失败），跳过渠道更改"
+            skip_channel_change=true
+        fi
+    else
+        echo "pkgutil 找到 app路径: /$app_path"
+    fi
+    # 4、更改渠道名称
+    if [ "$skip_channel_change" != true ]; then
+        app_channgel_base_path="/$app_path/Contents/Resources/channel/nochannel"
+        app_channgel_new_path="/$app_path/Contents/Resources/channel/$channel_name"
+        if [ -d "$app_channgel_base_path" ]; then
+            mv "$app_channgel_base_path" "$app_channgel_new_path" && echo "✓ 主应用渠道目录已更名" || echo "⚠ 主应用渠道目录更名失败"
+        else
+            echo "⚠ 主应用渠道目录不存在: $app_channgel_base_path"
+        fi
+        updater_channgel_base_path="/$app_path/Contents/Helpers/UURemoteUpdater.app/Contents/Resources/channel/nochannel"
+        updater_channgel_new_path="/$app_path/Contents/Helpers/UURemoteUpdater.app/Contents/Resources/channel/$channel_name"
+        if [ -d "$updater_channgel_base_path" ]; then
+            mv "$updater_channgel_base_path" "$updater_channgel_new_path" && echo "✓ Updater 渠道目录已更名" || echo "⚠ Updater 渠道目录更名失败"
+        else
+            echo "⚠ Updater 渠道目录不存在: $updater_channgel_base_path"
+        fi
+        echo "渠道名-更改流程结束"
+    fi
+else 
+    echo "渠道名-一致不改"
+fi
+
+# 重新打开
+sleep 2
+
+# 异步启动应用，失败不影响后续脚本执行；输出重定向并后台运行
+if command -v open >/dev/null 2>&1; then
+    # 使用 & 将进程放入后台；前置 launchctl asuser+sudo 以切换到目标登录用户图形会话
+    launchctl asuser "$CURRENT_UID" sudo -u "$CURRENT_USER" open -b com.netease.uuremote --args -startup-by-installer \
+        >/dev/null 2>&1 &
+    echo "已异步触发 UURemote 应用启动（忽略可能的失败）"
+else
+    echo "系统未找到 open 命令，跳过启动 UURemote"
+fi
+
+echo "完成 postinstall 脚本收尾"

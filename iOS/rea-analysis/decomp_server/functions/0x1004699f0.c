@@ -1,0 +1,237 @@
+// rea decompile_all
+// name: FUN_1004699f0
+// address: 0x1004699f0
+// body: available
+// range: 0x1004699f0-0x100469b6f inclusive
+// non_contiguous: false
+// provider: Ghidra 12.1.4 (ghidra)
+// analysis_profile: 066f9d6c56d7a436e2061afaa7f68aa9085572cd83e3172cf52ecd30a6101bae
+// limitations: The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.; The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.; Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.; Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.; Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.; External functions and functions without an analyzable body return null; other decompiler failures remain explicit.
+// pseudocode: provider-specific; not original source
+
+
+undefined * FUN_1004699f0(undefined8 param_1,undefined8 param_2,long param_3)
+
+{
+  int iVar1;
+  undefined8 *puVar2;
+  undefined *puVar3;
+  undefined1 auStack_448 [200];
+  undefined8 local_380;
+  undefined8 uStack_378;
+  undefined8 uStack_370;
+  undefined8 uStack_368;
+  undefined8 local_360;
+  undefined8 uStack_358;
+  undefined8 uStack_350;
+  undefined8 uStack_348;
+  undefined8 local_340;
+  undefined8 uStack_338;
+  undefined8 uStack_330;
+  undefined8 uStack_328;
+  undefined8 local_320;
+  undefined8 uStack_318;
+  undefined8 uStack_310;
+  undefined8 uStack_308;
+  undefined8 local_300;
+  undefined8 uStack_2f8;
+  undefined8 uStack_2f0;
+  undefined8 uStack_2e8;
+  undefined8 local_2e0;
+  undefined8 uStack_2d8;
+  undefined8 uStack_2d0;
+  undefined8 uStack_2c8;
+  undefined1 local_2c0;
+  undefined8 local_2b0;
+  undefined8 uStack_2a8;
+  undefined8 uStack_2a0;
+  undefined8 uStack_298;
+  undefined8 local_290;
+  undefined8 uStack_288;
+  undefined8 uStack_280;
+  undefined8 uStack_278;
+  undefined8 local_270;
+  undefined8 uStack_268;
+  undefined8 uStack_260;
+  undefined8 uStack_258;
+  undefined8 local_250;
+  undefined8 uStack_248;
+  undefined8 uStack_240;
+  undefined8 uStack_238;
+  undefined8 local_230;
+  undefined8 uStack_228;
+  undefined8 uStack_220;
+  undefined8 uStack_218;
+  undefined8 local_210;
+  undefined8 uStack_208;
+  undefined8 uStack_200;
+  undefined8 uStack_1f8;
+  undefined1 local_1f0;
+  undefined8 local_1e0;
+  undefined8 uStack_1d8;
+  undefined8 uStack_1d0;
+  undefined8 uStack_1c8;
+  undefined8 local_1c0;
+  undefined8 uStack_1b8;
+  undefined8 uStack_1b0;
+  undefined8 uStack_1a8;
+  undefined8 local_1a0;
+  undefined8 uStack_198;
+  undefined8 uStack_190;
+  undefined8 uStack_188;
+  undefined8 local_180;
+  undefined8 uStack_178;
+  undefined8 uStack_170;
+  undefined8 uStack_168;
+  undefined8 local_160;
+  undefined8 uStack_158;
+  undefined8 uStack_150;
+  undefined8 uStack_148;
+  undefined8 local_140;
+  undefined8 uStack_138;
+  undefined8 uStack_130;
+  undefined8 uStack_128;
+  undefined1 local_120;
+  undefined8 local_110;
+  undefined8 uStack_108;
+  undefined8 uStack_100;
+  undefined8 uStack_f8;
+  undefined8 local_f0;
+  undefined8 uStack_e8;
+  undefined8 uStack_e0;
+  undefined8 uStack_d8;
+  undefined8 local_d0;
+  undefined8 uStack_c8;
+  undefined8 uStack_c0;
+  undefined8 uStack_b8;
+  undefined8 local_b0;
+  undefined8 uStack_a8;
+  undefined8 uStack_a0;
+  undefined8 uStack_98;
+  undefined8 local_90;
+  undefined8 uStack_88;
+  undefined8 uStack_80;
+  undefined8 uStack_78;
+  undefined8 local_70;
+  undefined8 uStack_68;
+  undefined8 uStack_60;
+  undefined8 uStack_58;
+  undefined1 local_50;
+  
+  uStack_78 = *(undefined8 *)(param_3 + 0xb8);
+  uStack_80 = *(undefined8 *)(param_3 + 0xb0);
+  uStack_138 = *(undefined8 *)(param_3 + 200);
+  local_140 = *(undefined8 *)(param_3 + 0xc0);
+  uStack_68 = *(undefined8 *)(param_3 + 200);
+  local_70 = *(undefined8 *)(param_3 + 0xc0);
+  uStack_128 = *(undefined8 *)(param_3 + 0xd8);
+  uStack_130 = *(undefined8 *)(param_3 + 0xd0);
+  uStack_b8 = *(undefined8 *)(param_3 + 0x78);
+  uStack_c0 = *(undefined8 *)(param_3 + 0x70);
+  uStack_178 = *(undefined8 *)(param_3 + 0x88);
+  local_180 = *(undefined8 *)(param_3 + 0x80);
+  uStack_a8 = *(undefined8 *)(param_3 + 0x88);
+  local_b0 = *(undefined8 *)(param_3 + 0x80);
+  uStack_168 = *(undefined8 *)(param_3 + 0x98);
+  uStack_170 = *(undefined8 *)(param_3 + 0x90);
+  uStack_98 = *(undefined8 *)(param_3 + 0x98);
+  uStack_a0 = *(undefined8 *)(param_3 + 0x90);
+  uStack_158 = *(undefined8 *)(param_3 + 0xa8);
+  local_160 = *(undefined8 *)(param_3 + 0xa0);
+  uStack_88 = *(undefined8 *)(param_3 + 0xa8);
+  local_90 = *(undefined8 *)(param_3 + 0xa0);
+  uStack_148 = *(undefined8 *)(param_3 + 0xb8);
+  uStack_150 = *(undefined8 *)(param_3 + 0xb0);
+  uStack_f8 = *(undefined8 *)(param_3 + 0x38);
+  uStack_100 = *(undefined8 *)(param_3 + 0x30);
+  uStack_1b8 = *(undefined8 *)(param_3 + 0x48);
+  local_1c0 = *(undefined8 *)(param_3 + 0x40);
+  uStack_e8 = *(undefined8 *)(param_3 + 0x48);
+  local_f0 = *(undefined8 *)(param_3 + 0x40);
+  uStack_1a8 = *(undefined8 *)(param_3 + 0x58);
+  uStack_1b0 = *(undefined8 *)(param_3 + 0x50);
+  uStack_d8 = *(undefined8 *)(param_3 + 0x58);
+  uStack_e0 = *(undefined8 *)(param_3 + 0x50);
+  uStack_198 = *(undefined8 *)(param_3 + 0x68);
+  local_1a0 = *(undefined8 *)(param_3 + 0x60);
+  uStack_c8 = *(undefined8 *)(param_3 + 0x68);
+  local_d0 = *(undefined8 *)(param_3 + 0x60);
+  uStack_188 = *(undefined8 *)(param_3 + 0x78);
+  uStack_190 = *(undefined8 *)(param_3 + 0x70);
+  uStack_1d8 = *(undefined8 *)(param_3 + 0x28);
+  local_1e0 = *(undefined8 *)(param_3 + 0x20);
+  uStack_1c8 = *(undefined8 *)(param_3 + 0x38);
+  uStack_1d0 = *(undefined8 *)(param_3 + 0x30);
+  uStack_108 = *(undefined8 *)(param_3 + 0x28);
+  local_110 = *(undefined8 *)(param_3 + 0x20);
+  uStack_58 = *(undefined8 *)(param_3 + 0xd8);
+  uStack_60 = *(undefined8 *)(param_3 + 0xd0);
+  local_120 = *(undefined1 *)(param_3 + 0xe0);
+  local_50 = *(undefined1 *)(param_3 + 0xe0);
+  iVar1 = (int)&local_110;
+  FUN_1001218ec();
+  puVar3 = PTR___swiftEmptyArrayStorage_100995ea0;
+  if (iVar1 != 1) {
+    uStack_208 = uStack_68;
+    local_210 = local_70;
+    uStack_1f8 = uStack_58;
+    uStack_200 = uStack_60;
+    local_1f0 = local_50;
+    uStack_248 = uStack_a8;
+    local_250 = local_b0;
+    uStack_238 = uStack_98;
+    uStack_240 = uStack_a0;
+    uStack_228 = uStack_88;
+    local_230 = local_90;
+    uStack_218 = uStack_78;
+    uStack_220 = uStack_80;
+    uStack_288 = uStack_e8;
+    local_290 = local_f0;
+    uStack_278 = uStack_d8;
+    uStack_280 = uStack_e0;
+    uStack_268 = uStack_c8;
+    local_270 = local_d0;
+    uStack_258 = uStack_b8;
+    uStack_260 = uStack_c0;
+    uStack_2a8 = uStack_108;
+    local_2b0 = local_110;
+    uStack_298 = uStack_f8;
+    uStack_2a0 = uStack_100;
+    iVar1 = (int)&local_2b0;
+    FUN_100121900();
+    puVar3 = PTR___swiftEmptyArrayStorage_100995ea0;
+    if (iVar1 == 4) {
+      puVar2 = &local_2b0;
+      FUN_100008290();
+      puVar3 = (undefined *)*puVar2;
+      uStack_2d8 = uStack_138;
+      local_2e0 = local_140;
+      uStack_2c8 = uStack_128;
+      uStack_2d0 = uStack_130;
+      local_2c0 = local_120;
+      uStack_318 = uStack_178;
+      local_320 = local_180;
+      uStack_308 = uStack_168;
+      uStack_310 = uStack_170;
+      uStack_2f8 = uStack_158;
+      local_300 = local_160;
+      uStack_2e8 = uStack_148;
+      uStack_2f0 = uStack_150;
+      uStack_378 = uStack_1d8;
+      local_380 = local_1e0;
+      uStack_368 = uStack_1c8;
+      uStack_370 = uStack_1d0;
+      uStack_358 = uStack_1b8;
+      local_360 = local_1c0;
+      uStack_348 = uStack_1a8;
+      uStack_350 = uStack_1b0;
+      uStack_338 = uStack_198;
+      local_340 = local_1a0;
+      uStack_328 = uStack_188;
+      uStack_330 = uStack_190;
+      FUN_1004749f4(&local_380,auStack_448);
+    }
+  }
+  return puVar3;
+}
+

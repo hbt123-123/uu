@@ -1,0 +1,20 @@
+//
+//  Debug.xcconfig
+//  nrd-mac-client
+//
+//  Created by 王文宇 on 2023/2/3.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+#include "Pods/Target Support Files/Pods-nrd-mac-client/Pods-nrd-mac-client.debug.xcconfig"
+UUREMOTE_ENVIRONMENT = DEBUG
+//Code sign
+CODE_SIGN_IDENTITY = Developer ID Application: Hangzhou Bobo Technology Co Ltd (PU9BNSBJW7)
+
+//App
+ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon
+APP_IDENTIFIER = com.netease.uuremote
+ARCH_ENV = $(ARCHS_STANDARD)
+// DEBUG flag can present more logs
+OTHER_SWIFT_FLAG = ${UUREMOTE_ENVIRONMENT}

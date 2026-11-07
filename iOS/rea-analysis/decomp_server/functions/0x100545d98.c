@@ -1,0 +1,101 @@
+// rea decompile_all
+// name: FUN_100545d98
+// address: 0x100545d98
+// body: available
+// range: 0x100545d98-0x100545eef inclusive
+// non_contiguous: false
+// provider: Ghidra 12.1.4 (ghidra)
+// analysis_profile: 066f9d6c56d7a436e2061afaa7f68aa9085572cd83e3172cf52ecd30a6101bae
+// limitations: The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.; The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.; Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.; Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.; Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.; External functions and functions without an analyzable body return null; other decompiler failures remain explicit.
+// pseudocode: provider-specific; not original source
+
+
+undefined8 * FUN_100545d98(undefined8 *param_1,undefined8 *param_2)
+
+{
+  undefined1 uVar1;
+  undefined1 uVar2;
+  undefined1 uVar3;
+  undefined1 uVar4;
+  undefined2 uVar5;
+  undefined8 uVar6;
+  undefined8 uVar7;
+  undefined8 uVar8;
+  undefined8 uVar9;
+  
+  if (*(char *)((long)param_1 + 0x21) == -1) {
+    if (*(ushort *)(param_2 + 4) >> 8 < 0xff) {
+      uVar6 = *param_2;
+      param_1[1] = param_2[1];
+      *param_1 = uVar6;
+      uVar6 = param_2[2];
+      uVar7 = param_2[3];
+      uVar1 = *(undefined1 *)((long)param_2 + 0x21);
+      uVar2 = *(undefined1 *)(param_2 + 4);
+      FUN_10050f830(uVar6,uVar7,uVar2,uVar1);
+      param_1[2] = uVar6;
+      param_1[3] = uVar7;
+      *(undefined1 *)(param_1 + 4) = uVar2;
+      *(undefined1 *)((long)param_1 + 0x21) = uVar1;
+    }
+    else {
+      uVar7 = param_2[1];
+      uVar6 = *param_2;
+      uVar9 = param_2[3];
+      uVar8 = param_2[2];
+      *(undefined2 *)(param_1 + 4) = *(undefined2 *)(param_2 + 4);
+      param_1[1] = uVar7;
+      *param_1 = uVar6;
+      param_1[3] = uVar9;
+      param_1[2] = uVar8;
+    }
+  }
+  else if (*(ushort *)(param_2 + 4) >> 8 < 0xff) {
+    *param_1 = *param_2;
+    param_1[1] = param_2[1];
+    uVar6 = param_2[2];
+    uVar8 = param_2[3];
+    uVar1 = *(undefined1 *)((long)param_2 + 0x21);
+    uVar2 = *(undefined1 *)(param_2 + 4);
+    FUN_10050f830(uVar6,uVar8,uVar2,uVar1);
+    uVar7 = param_1[2];
+    uVar9 = param_1[3];
+    uVar3 = *(undefined1 *)((long)param_1 + 0x21);
+    param_1[2] = uVar6;
+    param_1[3] = uVar8;
+    uVar4 = *(undefined1 *)(param_1 + 4);
+    *(undefined1 *)(param_1 + 4) = uVar2;
+    *(undefined1 *)((long)param_1 + 0x21) = uVar1;
+    FUN_10051f490(uVar7,uVar9,uVar4,uVar3);
+  }
+  else {
+    FUN_100545ef0(param_1);
+    uVar5 = *(undefined2 *)(param_2 + 4);
+    uVar8 = *param_2;
+    uVar7 = param_2[3];
+    uVar6 = param_2[2];
+    param_1[1] = param_2[1];
+    *param_1 = uVar8;
+    param_1[3] = uVar7;
+    param_1[2] = uVar6;
+    *(undefined2 *)(param_1 + 4) = uVar5;
+  }
+  param_1[5] = param_2[5];
+  param_1[6] = param_2[6];
+  uVar6 = param_2[7];
+  uVar8 = param_2[8];
+  uVar1 = *(undefined1 *)((long)param_2 + 0x49);
+  uVar2 = *(undefined1 *)(param_2 + 9);
+  FUN_10050f830(uVar6,uVar8,uVar2,uVar1);
+  uVar7 = param_1[7];
+  uVar9 = param_1[8];
+  uVar3 = *(undefined1 *)((long)param_1 + 0x49);
+  param_1[7] = uVar6;
+  param_1[8] = uVar8;
+  uVar4 = *(undefined1 *)(param_1 + 9);
+  *(undefined1 *)(param_1 + 9) = uVar2;
+  *(undefined1 *)((long)param_1 + 0x49) = uVar1;
+  FUN_10051f490(uVar7,uVar9,uVar4,uVar3);
+  return param_1;
+}
+

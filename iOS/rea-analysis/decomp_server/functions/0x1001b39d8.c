@@ -1,0 +1,48 @@
+// rea decompile_all
+// name: FUN_1001b39d8
+// address: 0x1001b39d8
+// body: available
+// range: 0x1001b39d8-0x1001b3b4f inclusive
+// non_contiguous: false
+// provider: Ghidra 12.1.4 (ghidra)
+// analysis_profile: 066f9d6c56d7a436e2061afaa7f68aa9085572cd83e3172cf52ecd30a6101bae
+// limitations: The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.; The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.; Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.; Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.; Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.; External functions and functions without an analyzable body return null; other decompiler failures remain explicit.
+// pseudocode: provider-specific; not original source
+
+
+/* WARNING: Function: _objc_retain replaced with injection: _objc_retain_fixup */
+/* WARNING: Function: _objc_release replaced with injection: _objc_release_fixup */
+
+void FUN_1001b39d8(undefined8 param_1,undefined8 param_2,long param_3,undefined8 param_4,
+                  undefined8 param_5,undefined8 param_6)
+
+{
+  undefined8 uVar1;
+  undefined1 auStack_90 [16];
+  undefined4 local_80;
+  undefined8 local_78;
+  undefined1 auStack_68 [24];
+  
+  FUN_100401b14(0);
+  local_80 = (undefined4)param_1;
+  local_78 = param_2;
+  FUN_1003fb48c(FUN_1001b5658,auStack_90,0xd000000000000095,0x8000000100877f50,0xd00000000000003f,
+                0x800000010089b0f0,0x222,0);
+  _swift_beginAccess(param_3 + 0x10,auStack_68,0,0);
+  param_3 = param_3 + 0x10;
+  _swift_unknownObjectWeakLoadStrong();
+  if (((param_3 != 0) &&
+      (*(long *)(param_3 + _TtC14UURemoteServer15StreamerManager::dispatcher) != 0)) &&
+     (*(long *)(*(long *)(param_3 + _TtC14UURemoteServer15StreamerManager::dispatcher) +
+               _TtC14UURemoteServer18StreamerDispatcher::currentConnectSession) != 0)) {
+    if (DAT_100a73b60 != -1) {
+      _swift_once(&DAT_100a73b60,FUN_1000efc4c);
+    }
+    uVar1 = *(undefined8 *)(DAT_100b360a8 + 0x80);
+    _swift_retain(uVar1);
+    FUN_10002f378(param_1,param_2,param_4,param_5,param_6);
+    _swift_release(uVar1);
+  }
+  return;
+}
+

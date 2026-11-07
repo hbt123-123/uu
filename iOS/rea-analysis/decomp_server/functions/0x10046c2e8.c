@@ -1,0 +1,277 @@
+// rea decompile_all
+// name: FUN_10046c2e8
+// address: 0x10046c2e8
+// body: available
+// range: 0x10046c2e8-0x10046c4c7 inclusive
+// non_contiguous: false
+// provider: Ghidra 12.1.4 (ghidra)
+// analysis_profile: 066f9d6c56d7a436e2061afaa7f68aa9085572cd83e3172cf52ecd30a6101bae
+// limitations: The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.; The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.; Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.; Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.; Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.; External functions and functions without an analyzable body return null; other decompiler failures remain explicit.
+// pseudocode: provider-specific; not original source
+
+
+void FUN_10046c2e8(undefined8 *param_1,undefined8 param_2,undefined8 param_3,long param_4)
+
+{
+  int iVar1;
+  undefined8 *puVar2;
+  undefined4 uVar3;
+  undefined8 uVar4;
+  undefined4 uVar5;
+  undefined8 uVar6;
+  undefined8 uVar7;
+  undefined1 uVar8;
+  undefined8 local_480;
+  undefined8 uStack_478;
+  undefined1 auStack_468 [200];
+  undefined8 local_3a0;
+  undefined8 uStack_398;
+  undefined8 uStack_390;
+  undefined8 uStack_388;
+  undefined8 local_380;
+  undefined8 uStack_378;
+  undefined8 uStack_370;
+  undefined8 uStack_368;
+  undefined8 local_360;
+  undefined8 uStack_358;
+  undefined8 uStack_350;
+  undefined8 uStack_348;
+  undefined8 local_340;
+  undefined8 uStack_338;
+  undefined8 uStack_330;
+  undefined8 uStack_328;
+  undefined8 local_320;
+  undefined8 uStack_318;
+  undefined8 uStack_310;
+  undefined8 uStack_308;
+  undefined8 local_300;
+  undefined8 uStack_2f8;
+  undefined8 uStack_2f0;
+  undefined8 uStack_2e8;
+  undefined1 local_2e0;
+  undefined8 local_2d0;
+  undefined8 uStack_2c8;
+  undefined8 uStack_2c0;
+  undefined8 uStack_2b8;
+  undefined8 local_2b0;
+  undefined8 uStack_2a8;
+  undefined8 uStack_2a0;
+  undefined8 uStack_298;
+  undefined8 local_290;
+  undefined8 uStack_288;
+  undefined8 uStack_280;
+  undefined8 uStack_278;
+  undefined8 local_270;
+  undefined8 uStack_268;
+  undefined8 uStack_260;
+  undefined8 uStack_258;
+  undefined8 local_250;
+  undefined8 uStack_248;
+  undefined8 uStack_240;
+  undefined8 uStack_238;
+  undefined8 local_230;
+  undefined8 uStack_228;
+  undefined8 uStack_220;
+  undefined8 uStack_218;
+  undefined1 local_210;
+  undefined8 local_200;
+  undefined8 uStack_1f8;
+  undefined8 uStack_1f0;
+  undefined8 uStack_1e8;
+  undefined8 local_1e0;
+  undefined8 uStack_1d8;
+  undefined8 uStack_1d0;
+  undefined8 uStack_1c8;
+  undefined8 local_1c0;
+  undefined8 uStack_1b8;
+  undefined8 uStack_1b0;
+  undefined8 uStack_1a8;
+  undefined8 local_1a0;
+  undefined8 uStack_198;
+  undefined8 uStack_190;
+  undefined8 uStack_188;
+  undefined8 local_180;
+  undefined8 uStack_178;
+  undefined8 uStack_170;
+  undefined8 uStack_168;
+  undefined8 local_160;
+  undefined8 uStack_158;
+  undefined8 uStack_150;
+  undefined8 uStack_148;
+  undefined1 local_140;
+  undefined8 local_130;
+  undefined8 uStack_128;
+  undefined8 uStack_120;
+  undefined8 uStack_118;
+  undefined8 local_110;
+  undefined8 uStack_108;
+  undefined8 uStack_100;
+  undefined8 uStack_f8;
+  undefined8 local_f0;
+  undefined8 uStack_e8;
+  undefined8 uStack_e0;
+  undefined8 uStack_d8;
+  undefined8 local_d0;
+  undefined8 uStack_c8;
+  undefined8 uStack_c0;
+  undefined8 uStack_b8;
+  undefined8 local_b0;
+  undefined8 uStack_a8;
+  undefined8 uStack_a0;
+  undefined8 uStack_98;
+  undefined8 local_90;
+  undefined8 uStack_88;
+  undefined8 uStack_80;
+  undefined8 uStack_78;
+  undefined1 local_70;
+  
+  uStack_98 = *(undefined8 *)(param_4 + 0xb8);
+  uStack_a0 = *(undefined8 *)(param_4 + 0xb0);
+  uStack_158 = *(undefined8 *)(param_4 + 200);
+  local_160 = *(undefined8 *)(param_4 + 0xc0);
+  uStack_88 = *(undefined8 *)(param_4 + 200);
+  local_90 = *(undefined8 *)(param_4 + 0xc0);
+  uStack_148 = *(undefined8 *)(param_4 + 0xd8);
+  uStack_150 = *(undefined8 *)(param_4 + 0xd0);
+  uStack_d8 = *(undefined8 *)(param_4 + 0x78);
+  uStack_e0 = *(undefined8 *)(param_4 + 0x70);
+  uStack_198 = *(undefined8 *)(param_4 + 0x88);
+  local_1a0 = *(undefined8 *)(param_4 + 0x80);
+  uStack_c8 = *(undefined8 *)(param_4 + 0x88);
+  local_d0 = *(undefined8 *)(param_4 + 0x80);
+  uStack_188 = *(undefined8 *)(param_4 + 0x98);
+  uStack_190 = *(undefined8 *)(param_4 + 0x90);
+  uStack_b8 = *(undefined8 *)(param_4 + 0x98);
+  uStack_c0 = *(undefined8 *)(param_4 + 0x90);
+  uStack_178 = *(undefined8 *)(param_4 + 0xa8);
+  local_180 = *(undefined8 *)(param_4 + 0xa0);
+  uStack_a8 = *(undefined8 *)(param_4 + 0xa8);
+  local_b0 = *(undefined8 *)(param_4 + 0xa0);
+  uStack_168 = *(undefined8 *)(param_4 + 0xb8);
+  uStack_170 = *(undefined8 *)(param_4 + 0xb0);
+  uStack_118 = *(undefined8 *)(param_4 + 0x38);
+  uStack_120 = *(undefined8 *)(param_4 + 0x30);
+  uStack_1d8 = *(undefined8 *)(param_4 + 0x48);
+  local_1e0 = *(undefined8 *)(param_4 + 0x40);
+  uStack_108 = *(undefined8 *)(param_4 + 0x48);
+  local_110 = *(undefined8 *)(param_4 + 0x40);
+  uStack_1c8 = *(undefined8 *)(param_4 + 0x58);
+  uStack_1d0 = *(undefined8 *)(param_4 + 0x50);
+  uStack_f8 = *(undefined8 *)(param_4 + 0x58);
+  uStack_100 = *(undefined8 *)(param_4 + 0x50);
+  uStack_1b8 = *(undefined8 *)(param_4 + 0x68);
+  local_1c0 = *(undefined8 *)(param_4 + 0x60);
+  uStack_e8 = *(undefined8 *)(param_4 + 0x68);
+  local_f0 = *(undefined8 *)(param_4 + 0x60);
+  uStack_1a8 = *(undefined8 *)(param_4 + 0x78);
+  uStack_1b0 = *(undefined8 *)(param_4 + 0x70);
+  uStack_1f8 = *(undefined8 *)(param_4 + 0x28);
+  local_200 = *(undefined8 *)(param_4 + 0x20);
+  uStack_1e8 = *(undefined8 *)(param_4 + 0x38);
+  uStack_1f0 = *(undefined8 *)(param_4 + 0x30);
+  uStack_128 = *(undefined8 *)(param_4 + 0x28);
+  local_130 = *(undefined8 *)(param_4 + 0x20);
+  uStack_78 = *(undefined8 *)(param_4 + 0xd8);
+  uStack_80 = *(undefined8 *)(param_4 + 0xd0);
+  local_140 = *(undefined1 *)(param_4 + 0xe0);
+  local_70 = *(undefined1 *)(param_4 + 0xe0);
+  iVar1 = (int)&local_130;
+  FUN_1001218ec();
+  uStack_478 = 0xc000000000000000;
+  local_480 = 0;
+  if (iVar1 == 1) {
+    uVar6 = 0;
+    uVar5 = 0;
+    uVar4 = 0;
+    uVar3 = 0;
+    uVar7 = 0xe000000000000000;
+    uVar8 = 1;
+  }
+  else {
+    uStack_478 = 0xc000000000000000;
+    local_480 = 0;
+    uStack_228 = uStack_88;
+    local_230 = local_90;
+    uStack_218 = uStack_78;
+    uStack_220 = uStack_80;
+    local_210 = local_70;
+    uStack_268 = uStack_c8;
+    local_270 = local_d0;
+    uStack_258 = uStack_b8;
+    uStack_260 = uStack_c0;
+    uStack_248 = uStack_a8;
+    local_250 = local_b0;
+    uStack_238 = uStack_98;
+    uStack_240 = uStack_a0;
+    uStack_2a8 = uStack_108;
+    local_2b0 = local_110;
+    uStack_298 = uStack_f8;
+    uStack_2a0 = uStack_100;
+    uStack_288 = uStack_e8;
+    local_290 = local_f0;
+    uStack_278 = uStack_d8;
+    uStack_280 = uStack_e0;
+    uStack_2c8 = uStack_128;
+    local_2d0 = local_130;
+    uStack_2b8 = uStack_118;
+    uStack_2c0 = uStack_120;
+    iVar1 = (int)&local_2d0;
+    FUN_100121900();
+    if (iVar1 == 9) {
+      puVar2 = &local_2d0;
+      FUN_100008290();
+      uStack_478 = puVar2[6];
+      local_480 = puVar2[5];
+      uVar3 = *(undefined4 *)(puVar2 + 4);
+      uVar4 = puVar2[2];
+      uVar7 = puVar2[3];
+      uVar5 = *(undefined4 *)((long)puVar2 + 0xc);
+      uVar6 = *puVar2;
+      uVar8 = *(undefined1 *)(puVar2 + 1);
+      uStack_2f8 = uStack_158;
+      local_300 = local_160;
+      uStack_2e8 = uStack_148;
+      uStack_2f0 = uStack_150;
+      local_2e0 = local_140;
+      uStack_338 = uStack_198;
+      local_340 = local_1a0;
+      uStack_328 = uStack_188;
+      uStack_330 = uStack_190;
+      uStack_378 = uStack_1d8;
+      local_380 = local_1e0;
+      uStack_368 = uStack_1c8;
+      uStack_370 = uStack_1d0;
+      uStack_358 = uStack_1b8;
+      local_360 = local_1c0;
+      uStack_348 = uStack_1a8;
+      uStack_350 = uStack_1b0;
+      uStack_318 = uStack_178;
+      local_320 = local_180;
+      uStack_308 = uStack_168;
+      uStack_310 = uStack_170;
+      uStack_398 = uStack_1f8;
+      local_3a0 = local_200;
+      uStack_388 = uStack_1e8;
+      uStack_390 = uStack_1f0;
+      FUN_1004749f4(&local_3a0,auStack_468);
+    }
+    else {
+      uVar6 = 0;
+      uVar5 = 0;
+      uVar4 = 0;
+      uVar3 = 0;
+      uVar7 = 0xe000000000000000;
+      uVar8 = 1;
+    }
+  }
+  *param_1 = uVar6;
+  *(undefined1 *)(param_1 + 1) = uVar8;
+  *(undefined4 *)((long)param_1 + 0xc) = uVar5;
+  param_1[2] = uVar4;
+  param_1[3] = uVar7;
+  *(undefined4 *)(param_1 + 4) = uVar3;
+  param_1[6] = uStack_478;
+  param_1[5] = local_480;
+  return;
+}
+

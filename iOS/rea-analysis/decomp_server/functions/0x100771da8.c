@@ -1,0 +1,69 @@
+// rea decompile_all
+// name: SentryEnvelopeItem::initWithEvent:
+// address: 0x100771da8
+// body: available
+// range: 0x100771da8-0x100772073 inclusive
+// non_contiguous: false
+// provider: Ghidra 12.1.4 (ghidra)
+// analysis_profile: 066f9d6c56d7a436e2061afaa7f68aa9085572cd83e3172cf52ecd30a6101bae
+// limitations: The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.; The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.; Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.; Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.; Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.; External functions and functions without an analyzable body return null; other decompiler failures remain explicit.
+// pseudocode: provider-specific; not original source
+
+
+/* WARNING: Function: _objc_retain replaced with injection: _objc_retain_fixup */
+/* WARNING: Function: _objc_retainAutoreleasedReturnValue replaced with injection:
+   _objc_retain_fixup */
+/* WARNING: Function: _objc_release replaced with injection: _objc_release_fixup */
+/* Function Stack Size: 0x18 bytes */
+
+ID SentryEnvelopeItem::initWithEvent_(ID param_1,SEL param_2,ID param_3)
+
+{
+  ID IVar1;
+  class_t *pcVar2;
+  ID IVar3;
+  cfstringStruct *pcVar4;
+  
+  IVar1 = objc_stub::serialize(param_3);
+  IVar1 = objc_stub::dataWithJSONObject_((ID)&objc::class_t::SentrySerialization,IVar1);
+  if (IVar1 == 0) {
+    pcVar2 = &objc::class_t::SentryEvent;
+    _objc_alloc();
+    IVar1 = objc_stub::initWithLevel_((ID)pcVar2,3);
+    objc_stub::message(param_3);
+    IVar3 = objc_stub::stringWithFormat_
+                      ((ID)&_OBJC_CLASS___NSString,&cf_JSONconversionerrorforeventwithmessage_____);
+    pcVar2 = &objc::class_t::SentryMessage;
+    _objc_alloc();
+    IVar3 = objc_stub::initWithFormatted_((ID)pcVar2,IVar3);
+    objc_stub::setMessage_(IVar1,IVar3);
+    IVar3 = objc_stub::releaseName(param_3);
+    objc_stub::setReleaseName_(IVar1,IVar3);
+    IVar3 = objc_stub::environment(param_3);
+    objc_stub::setEnvironment_(IVar1,IVar3);
+    IVar3 = objc_stub::FUN_1007ef220(param_3);
+    objc_stub::FUN_1007f4100(IVar1,IVar3);
+    IVar3 = objc_stub::timestamp(param_3);
+    objc_stub::setTimestamp_(IVar1,IVar3);
+    IVar1 = objc_stub::serialize(IVar1);
+    IVar1 = objc_stub::dataWithJSONObject_((ID)&objc::class_t::SentrySerialization,IVar1);
+  }
+  IVar3 = objc_stub::type(param_3);
+  IVar3 = objc_stub::isEqualToString_(IVar3,&cf_transaction);
+  pcVar4 = &cf_transaction;
+  if ((IVar3 & 1) == 0) {
+    IVar3 = objc_stub::type(param_3);
+    IVar3 = objc_stub::isEqualToString_(IVar3,&cf_feedback);
+    pcVar4 = &cf_feedback;
+    if ((int)IVar3 == 0) {
+      pcVar4 = &cf_event;
+    }
+  }
+  pcVar2 = &objc::class_t::SentryEnvelopeItemHeader;
+  _objc_alloc();
+  IVar3 = objc_stub::length(IVar1);
+  IVar3 = objc_stub::initWithType_length_((ID)pcVar2,pcVar4,IVar3);
+  IVar1 = objc_stub::initWithHeader_data_(param_1,IVar3,IVar1);
+  return IVar1;
+}
+

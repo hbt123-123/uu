@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AssociatedBundleIdentifiers</key>
+	<array>
+		<string>com.netease.uuremote</string>
+	</array>
+	<key>ExitTimeOut</key>
+	<integer>5</integer>
+	<key>ThrottleInterval</key>
+	<integer>5</integer>
+	<key>KeepAlive</key>
+	<true/>
+	<key>Label</key>
+	<string>com.netease.uuremote.daemon</string>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/Applications/UURemote.app/Contents/MacOS/UURemoteDaemon</string>
+		<string>-daemon</string>
+	</array>
+	<key>WorkingDirectory</key>
+	<string>/Applications/UURemote.app/Contents/MacOS</string>
+	<key>MachServices</key>
+	<dict>
+		<key>com.uuremote.daemon</key>
+		<true/>
+	</dict>
+	<key>Umask</key>
+	<string>0</string>
+</dict>
+</plist>

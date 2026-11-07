@@ -1,0 +1,95 @@
+// rea decompile_all
+// name: SAIdentifier::unarchiveIdentitiesWithKey:
+// address: 0x10070cde0
+// body: available
+// range: 0x10070cde0-0x10070d27f inclusive
+// non_contiguous: false
+// provider: Ghidra 12.1.4 (ghidra)
+// analysis_profile: 066f9d6c56d7a436e2061afaa7f68aa9085572cd83e3172cf52ecd30a6101bae
+// limitations: The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.; The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.; Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.; Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.; Ghidra Listing reports a terminal call at 0x10070d1e8 to 0x1007de938 _objc_autoreleaseReturnValue (external=false, thunk=true, hasNoReturn=false); fallthrough is excluded by Ghidra's flow model. The reason for the terminal flow is not established by this observation.; Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.; External functions and functions without an analyzable body return null; other decompiler failures remain explicit.
+// pseudocode: provider-specific; not original source
+
+
+/* WARNING: Function: _objc_retain replaced with injection: _objc_retain_fixup */
+/* WARNING: Function: _objc_retainAutoreleasedReturnValue replaced with injection:
+   _objc_retain_fixup */
+/* WARNING: Function: _objc_release replaced with injection: _objc_release_fixup */
+/* WARNING: Function: _objc_autoreleaseReturnValue replaced with injection: _objc_retain_fixup */
+/* Function Stack Size: 0x18 bytes */
+
+ID SAIdentifier::unarchiveIdentitiesWithKey_(ID param_1,SEL param_2,ID param_3)
+
+{
+  ID IVar1;
+  ID IVar2;
+  ID IVar3;
+  ID IVar4;
+  ID IVar5;
+  cfstringStruct *pcVar6;
+  
+  IVar1 = decodeIdentities(param_1);
+  IVar1 = NSMutableDictionary::dictionaryWithDictionary_
+                    ((ID)&_OBJC_CLASS___NSMutableDictionary,IVar1);
+  IVar2 = NSMutableDictionary::objectForKeyedSubscript_(IVar1,&cf__identity_mac_serial_id);
+  if ((IVar2 == 0) &&
+     (IVar2 = NSMutableDictionary::objectForKeyedSubscript_(IVar1,&cf__identity_mac_uuid),
+     IVar2 == 0)) {
+    IVar2 = NSUUID::UUID((ID)&_OBJC_CLASS___NSUUID);
+    IVar3 = NSUUID::UUIDString(IVar2);
+    IVar2 = serialNumber((ID)&objc::class_t::SAIdentifier);
+    if (IVar2 == 0) {
+      pcVar6 = &cf__identity_mac_uuid;
+    }
+    else {
+      IVar3 = serialNumber((ID)&objc::class_t::SAIdentifier);
+      pcVar6 = &cf__identity_mac_serial_id;
+    }
+    NSMutableDictionary::setObject_forKeyedSubscript_(IVar1,IVar3,pcVar6);
+  }
+  IVar2 = SAStoreManager::sharedInstance((ID)&objc::class_t::SAStoreManager);
+  IVar3 = SABaseStoreManager::objectForKey_(IVar2,(ID)&cf_login_id);
+  IVar2 = SAStoreManager::sharedInstance((ID)&objc::class_t::SAStoreManager);
+  IVar4 = SABaseStoreManager::objectForKey_(IVar2,0x1009ef230);
+  IVar5 = NSMutableDictionary::objectForKeyedSubscript_(IVar1,IVar4);
+  IVar2 = IVar1;
+  if (IVar3 == 0) {
+    if (IVar5 != 0) {
+      IVar2 = NSMutableDictionary::dictionary((ID)&_OBJC_CLASS___NSMutableDictionary);
+      IVar3 = NSMutableDictionary::objectForKeyedSubscript_(IVar1,&cf__identity_mac_serial_id);
+      NSMutableDictionary::setObject_forKeyedSubscript_(IVar2,IVar3,&cf__identity_mac_serial_id);
+      IVar1 = NSMutableDictionary::objectForKeyedSubscript_(IVar1,&cf__identity_mac_uuid);
+      NSMutableDictionary::setObject_forKeyedSubscript_(IVar2,IVar1,&cf__identity_mac_uuid);
+    }
+    IVar1 = SAStoreManager::sharedInstance((ID)&objc::class_t::SAStoreManager);
+    SABaseStoreManager::removeObjectForKey_(IVar1,0x1009ef230);
+  }
+  else if (IVar5 == 0) {
+    IVar2 = NSMutableDictionary::dictionary((ID)&_OBJC_CLASS___NSMutableDictionary);
+    IVar4 = NSMutableDictionary::objectForKeyedSubscript_(IVar1,&cf__identity_mac_serial_id);
+    NSMutableDictionary::setObject_forKeyedSubscript_(IVar2,IVar4,&cf__identity_mac_serial_id);
+    IVar1 = NSMutableDictionary::objectForKeyedSubscript_(IVar1,&cf__identity_mac_uuid);
+    NSMutableDictionary::setObject_forKeyedSubscript_(IVar2,IVar1,&cf__identity_mac_uuid);
+    NSMutableDictionary::setObject_forKeyedSubscript_(IVar2,IVar3,param_3);
+    IVar1 = SAStoreManager::sharedInstance((ID)&objc::class_t::SAStoreManager);
+    SABaseStoreManager::setObject_forKey_(IVar1,param_3,0x1009ef230);
+  }
+  else {
+    IVar5 = NSMutableDictionary::objectForKeyedSubscript_(IVar1,IVar4);
+    IVar5 = NSMutableDictionary::isEqualToString_(IVar5,IVar3);
+    if ((IVar5 & 1) == 0) {
+      IVar2 = NSMutableDictionary::dictionary((ID)&_OBJC_CLASS___NSMutableDictionary);
+      IVar5 = NSMutableDictionary::objectForKeyedSubscript_(IVar1,&cf__identity_mac_serial_id);
+      NSMutableDictionary::setObject_forKeyedSubscript_(IVar2,IVar5,&cf__identity_mac_serial_id);
+      IVar1 = NSMutableDictionary::objectForKeyedSubscript_(IVar1,&cf__identity_mac_uuid);
+      NSMutableDictionary::setObject_forKeyedSubscript_(IVar2,IVar1,&cf__identity_mac_uuid);
+      NSMutableDictionary::setObject_forKeyedSubscript_(IVar2,IVar3,IVar4);
+    }
+  }
+  IVar1 = NSMutableDictionary::objectForKeyedSubscript_(IVar2,&cf__mac_serial_id);
+  if (IVar1 != 0) {
+    NSMutableDictionary::removeObjectForKey_(IVar2,&cf__mac_serial_id);
+  }
+  archiveIdentities_(param_1,IVar2);
+  return IVar2;
+}
+

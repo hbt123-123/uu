@@ -1,0 +1,11 @@
+=== target ===
+e347e1dfd57566934ae881f58f09fdd6ab1afae7f521cbfff3aa27a46a6c9560  /workspace/iOS/uuyc_4.46.0.pkg
+=== binaries ===
+4d1cc043161f24edbecc9904ea6491772a30842bc6554aa2f5b9491f55f5ea1d  payload/Applications/UURemote.app/Contents/MacOS/UURemote
+96b1837dbcd7e20aab646e5d2bcadf3c5c6f7e42430b47b5e074fed33068c886  payload/Applications/UURemote.app/Contents/MacOS/UURemoteDaemon
+994f5e353eeafe6098d73004d5797fe856a31ab2cf7f05dcafc790e4aec1ab46  payload/Applications/UURemote.app/Contents/MacOS/UURemoteService
+3f834f06c648b0bfeab93a6d2c0d101dfbc8e3dc3993a8c0390b37d13c4effbc  payload/Applications/UURemote.app/Contents/Helpers/UURemoteServer
+09acba38169d60174e52093abe577dd3e3659b1d82781fb87a295886dc24eb04  payload/Applications/UURemote.app/Contents/Helpers/uuyc-cli
+8f1bbbc1c1fdc9044c081e0476af90d2d96896c8ec34807ef41e76c312595bba  payload/Applications/UURemote.app/Contents/Helpers/tmux/uuyc-mux
+ce6fecafbf9c83fe6f3c730b25e30192873265175f8bcdb06c2893d5fd843156  payload/Applications/UURemote.app/Contents/XPCServices/UURemoteHelper.xpc/Contents/MacOS/UURemoteHelper
+0f2f169d196fe0158137843365accd09b15e7b5593c390de8df420482b88bbfa  payload/Applications/UURemote.app/Contents/Frameworks/libstreamer.dylib

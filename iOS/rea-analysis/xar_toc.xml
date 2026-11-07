@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xar>
+ <toc>
+  <creation-time>2026-11-04T08:10:52</creation-time>
+  <checksum style="sha1">
+   <offset>0</offset>
+   <size>20</size>
+  </checksum>
+  <signature style="RSA">
+   <offset>20</offset>
+   <size>256</size>
+   <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+    <X509Data>
+     <X509Certificate>MIIF6TCCBNGgAwIBAgIQYeJEFUeDnC2j9dpfVginfzANBgkqhkiG9w0BAQsFADBeMS0wKwYD
+VQQDDCREZXZlbG9wZXIgSUQgQ2VydGlmaWNhdGlvbiBBdXRob3JpdHkxCzAJBgNVBAsMAkcy
+MRMwEQYDVQQKDApBcHBsZSBJbmMuMQswCQYDVQQGEwJVUzAeFw0yMzA0MTcxMTI3NThaFw0y
+ODA0MTcxMTI3NTdaMIG3MRowGAYKCZImiZPyLGQBAQwKUFU5Qk5TQkpXNzFNMEsGA1UEAwxE
+RGV2ZWxvcGVyIElEIEluc3RhbGxlcjogSGFuZ3pob3UgQm9ibyBUZWNobm9sb2d5IENvIEx0
+ZCAoUFU5Qk5TQkpXNykxEzARBgNVBAsMClBVOUJOU0JKVzcxKDAmBgNVBAoMH0hhbmd6aG91
+IEJvYm8gVGVjaG5vbG9neSBDbyBMdGQxCzAJBgNVBAYTAkNOMIIBIjANBgkqhkiG9w0BAQEF
+AAOCAQ8AMIIBCgKCAQEA5iL6RqJ1JCsNwwSYJkJh5GFnVvrRzKvSIz0OK09Jn3WP6/pEVNsk
+GhVbBll8T/FkHpF7OPINo3+7okxk6RJSsuu0A9n/EJv0bF/CynbcBwmaMwQodK9J7+wmBi2s
+raqDpmO/27nceIiOUvJu+P88CtsA9jvsvNBqErcbRixWRfZ4ckHnSGarWA0R7BlJtVPS0P3d
+sa0C0JNBsXXj0w37OmNtPvbtMf48sDHCfYpKnOH76IbmwAx4P2xSxlGNDMhn+vduSApG53so
+W7h6hle4PWt23RcQhHwGM4Xwrb3futdnufv1xZd4JuvHbywOLeuaddznRNQ7aQmepoK4VO8o
+zQIDAQABo4ICRzCCAkMwDAYDVR0TAQH/BAIwADAfBgNVHSMEGDAWgBT4OgxpEXbg7azR66ZZ
++jfVxFWwHjByBggrBgEFBQcBAQRmMGQwLgYIKwYBBQUHMAKGImh0dHA6Ly9jZXJ0cy5hcHBs
+ZS5jb20vZGV2aWRnMi5kZXIwMgYIKwYBBQUHMAGGJmh0dHA6Ly9vY3NwLmFwcGxlLmNvbS9v
+Y3NwMDMtZGV2aWRnMjA2MIIBHgYDVR0gBIIBFTCCAREwggENBgkqhkiG92NkBQEwgf8wgcMG
+CCsGAQUFBwICMIG2DIGzUmVsaWFuY2Ugb24gdGhpcyBjZXJ0aWZpY2F0ZSBieSBhbnkgcGFy
+dHkgYXNzdW1lcyBhY2NlcHRhbmNlIG9mIHRoZSB0aGVuIGFwcGxpY2FibGUgc3RhbmRhcmQg
+dGVybXMgYW5kIGNvbmRpdGlvbnMgb2YgdXNlLCBjZXJ0aWZpY2F0ZSBwb2xpY3kgYW5kIGNl
+cnRpZmljYXRpb24gcHJhY3RpY2Ugc3RhdGVtZW50cy4wNwYIKwYBBQUHAgEWK2h0dHBzOi8v
+d3d3LmFwcGxlLmNvbS9jZXJ0aWZpY2F0ZWF1dGhvcml0eS8wFwYDVR0lAQH/BA0wCwYJKoZI
+hvdjZAQNMB0GA1UdDgQWBBRw2QQkZ/3DU6iYOfOokCqaqalBxjAOBgNVHQ8BAf8EBAMCB4Aw
+HwYKKoZIhvdjZAYBIQQRDA8yMDIzMDQxNzAwMDAwMFowEwYKKoZIhvdjZAYBDgEB/wQCBQAw
+DQYJKoZIhvcNAQELBQADggEBALTMAR5MvY4Npwb7nU359f3kdF+hxEYYxis/tEQV48NRNu/e
+eIUkMo/YozNdyabTqiV9wqrva63VChaVwOCBsW/hrogVpVcE4XaLoO4J9ShFyxSIAf3nxylM
+kFYlwJ6Lfv/wJ37uTEbJWJsWKQTiMELaslBE7w+4TOBPv906mtnNriRrySjMFFKdHCOhtrJS
+F8ihyVX4I3BpIhdqRyaggz4gScBly0mxOsLCRMmYMYbwOQBIXM1NSxJBDCYoiRxxA+POUspy
+mCn7lgrOKptQn/EkP7QSp2xaNebhvpsQEfCIlpVWZj22s5heBNCpRO/ZqBoQGN9qZ9qQ4y9v
+qAubeiU=</X509Certificate>
+     <X509Certificate>MIIEPjCCAyagAwIBAgIUf7QAP82XSXrLg02SpIp4c8KEXUMwDQYJKoZIhvcNAQELBQAwYjEL
+MAkGA1UEBhMCVVMxEzARBgNVBAoTCkFwcGxlIEluYy4xJjAkBgNVBAsTHUFwcGxlIENlcnRp
+ZmljYXRpb24gQXV0aG9yaXR5MRYwFAYDVQQDEw1BcHBsZSBSb290IENBMB4XDTIxMDkyMjE4
+NTUxMFoXDTMxMDkxNzAwMDAwMFowXjEtMCsGA1UEAwwkRGV2ZWxvcGVyIElEIENlcnRpZmlj
+YXRpb24gQXV0aG9yaXR5MQswCQYDVQQLDAJHMjETMBEGA1UECgwKQXBwbGUgSW5jLjELMAkG
+A1UEBhMCVVMwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDTLJVoIVSRir9lccIY
+TvbNDeGRKHXXA7qVH9MSmVJE3oBGZ/wpiwCFiIowh01Mbkq0x+UC49djTKrM6uzbQi+RfSXp
+X6RLKlRvF6wwnykoNKR/j+V4410jKiFG0InDX/hql51xGxiosgzJAwo1sgKnLfWz3BuDxSch
+QHKm5zd2Mee7Br90svZwrEysLc3JXkWLz/sI5mLVQJW1N1zMGw7h79yl5Y3JULdAnwojJUVA
+j5Rne+CU6jnTeKU00cLL4DN/LrYsw+Um1SXOqo0qd/yeFJaX4PVfLvLop3GnO6OZTHoio03v
+cBHV1oaBgvFnM5MzWkCxksSqc5YdxFz/4es3AgMBAAGjge8wgewwEgYDVR0TAQH/BAgwBgEB
+/wIBADAfBgNVHSMEGDAWgBQr0GlHlHYJ/vRrjS5ApvdHTX8IXjBEBggrBgEFBQcBAQQ4MDYw
+NAYIKwYBBQUHMAGGKGh0dHA6Ly9vY3NwLmFwcGxlLmNvbS9vY3NwMDMtYXBwbGVyb290Y2Ew
+LgYDVR0fBCcwJTAjoCGgH4YdaHR0cDovL2NybC5hcHBsZS5jb20vcm9vdC5jcmwwHQYDVR0O
+BBYEFPg6DGkRduDtrNHrpln6N9XEVbAeMA4GA1UdDwEB/wQEAwIBBjAQBgoqhkiG92NkBgIG
+BAIFADANBgkqhkiG9w0BAQsFAAOCAQEAwf1DClm/8bG3QxBa1hgyMBRWJuERSGMraXKXSB+O
+W8peJhX7dCOAM1QzGaEihlrYuEtpqqfOlpbCCsc1atBvzoppg2JtSjn1/oNN16LUiB/tiMAP
++PkzHrQQt8JcETdENwSwpESdjGgNe30dfsy1k/DWbz0VeoCldNPhj33SiOgxp5jFH9/iglmu
+gIFgRhbsnrmKQKobKuFhhgqMcA/ZSizsTKIFEdZ5jKVjJSEjAm+TW1pXoddFbd/M93+fX9vH
+7WSnb0Qvb009eHgKVrQ71zrIK2Wik+rbWOqO1LnEwDD8MhpNupIMJDmYgjqgmd7n5OS8DryF
+r1qrXND828wQww==</X509Certificate>
+     <X509Certificate>MIIEuzCCA6OgAwIBAgIBAjANBgkqhkiG9w0BAQUFADBiMQswCQYDVQQGEwJVUzETMBEGA1UE
+ChMKQXBwbGUgSW5jLjEmMCQGA1UECxMdQXBwbGUgQ2VydGlmaWNhdGlvbiBBdXRob3JpdHkx
+FjAUBgNVBAMTDUFwcGxlIFJvb3QgQ0EwHhcNMDYwNDI1MjE0MDM2WhcNMzUwMjA5MjE0MDM2
+WjBiMQswCQYDVQQGEwJVUzETMBEGA1UEChMKQXBwbGUgSW5jLjEmMCQGA1UECxMdQXBwbGUg
+Q2VydGlmaWNhdGlvbiBBdXRob3JpdHkxFjAUBgNVBAMTDUFwcGxlIFJvb3QgQ0EwggEiMA0G
+CSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDkkakJH5HbHkdQ6wXtXnmELes2oldMVeyLGYne
++Uts9QerIjAC6Bg++FAJ039BqJj50cpmnCRrEdCju+QbKsMflZ56DKRHi1vUFjczy8QPTc4U
+adHJGXL1XQ7Vf1+b8iUDulWPTV0N8WQ1IxVLFVkds5T39pyez1C6wVhQZ48ItCD3y6wsIG9w
+tj8BMIy3Q88PnT3zK0koGsj+zrW5DtleHNbLPbU6rfQPDgCSC7EhFi501TwN22IWq6NxkkdT
+VcGvL0Gz+PvjcM3mo0xFfh9Ma1CWQYnEdGILEINBhzOKgbEwWOxaBDKMaLOPHd5lc/9nXmW8
+Sdh2nzMUZaF3lMktAgMBAAGjggF6MIIBdjAOBgNVHQ8BAf8EBAMCAQYwDwYDVR0TAQH/BAUw
+AwEB/zAdBgNVHQ4EFgQUK9BpR5R2Cf70a40uQKb3R01/CF4wHwYDVR0jBBgwFoAUK9BpR5R2
+Cf70a40uQKb3R01/CF4wggERBgNVHSAEggEIMIIBBDCCAQAGCSqGSIb3Y2QFATCB8jAqBggr
+BgEFBQcCARYeaHR0cHM6Ly93d3cuYXBwbGUuY29tL2FwcGxlY2EvMIHDBggrBgEFBQcCAjCB
+thqBs1JlbGlhbmNlIG9uIHRoaXMgY2VydGlmaWNhdGUgYnkgYW55IHBhcnR5IGFzc3VtZXMg
+YWNjZXB0YW5jZSBvZiB0aGUgdGhlbiBhcHBsaWNhYmxlIHN0YW5kYXJkIHRlcm1zIGFuZCBj
+b25kaXRpb25zIG9mIHVzZSwgY2VydGlmaWNhdGUgcG9saWN5IGFuZCBjZXJ0aWZpY2F0aW9u
+IHByYWN0aWNlIHN0YXRlbWVudHMuMA0GCSqGSIb3DQEBBQUAA4IBAQBcNplMLXi37Yyb3PN3
+m/J20ncwT8EfhYOFG5k9RzfyqZtAjizUsZAS2L70c5vu0mQPy3lPNNiiPvl4/2vIB+x9OYOL
+UyDTOMSxv5pPCmv/K/xZpwUJfBdAVhEedNO3iyM7R6PVbyTi69G3cN8PReEnyvFteO3ntRcX
+qNx+IjXKJdXZD9Zr1KIkIxH3oayPc4FgxhtbCS+SsvhESPBgOJ4V9T0mZyCKM2r3DYLP3uuj
+L/lTaltkwGMzd/c6ByxW69oPIQ7aunMZT7XZNn/Bh1XZp5m5MkL72NVxnn6hUrcbvZNCJBIq
+xw8dtk2cXmPIS4AXUKqK1drk/NAJBzewdXUh</X509Certificate>
+    </X509Data>
+   </KeyInfo>
+  </signature>
+  <x-signature style="CMS">
+   <offset>276</offset>
+   <size>9216</size>
+   <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+    <X509Data>
+     <X509Certificate>MIIF6TCCBNGgAwIBAgIQYeJEFUeDnC2j9dpfVginfzANBgkqhkiG9w0BAQsFADBeMS0wKwYD
+VQQDDCREZXZlbG9wZXIgSUQgQ2VydGlmaWNhdGlvbiBBdXRob3JpdHkxCzAJBgNVBAsMAkcy
+MRMwEQYDVQQKDApBcHBsZSBJbmMuMQswCQYDVQQGEwJVUzAeFw0yMzA0MTcxMTI3NThaFw0y
+ODA0MTcxMTI3NTdaMIG3MRowGAYKCZImiZPyLGQBAQwKUFU5Qk5TQkpXNzFNMEsGA1UEAwxE
+RGV2ZWxvcGVyIElEIEluc3RhbGxlcjogSGFuZ3pob3UgQm9ibyBUZWNobm9sb2d5IENvIEx0
+ZCAoUFU5Qk5TQkpXNykxEzARBgNVBAsMClBVOUJOU0JKVzcxKDAmBgNVBAoMH0hhbmd6aG91
+IEJvYm8gVGVjaG5vbG9neSBDbyBMdGQxCzAJBgNVBAYTAkNOMIIBIjANBgkqhkiG9w0BAQEF
+AAOCAQ8AMIIBCgKCAQEA5iL6RqJ1JCsNwwSYJkJh5GFnVvrRzKvSIz0OK09Jn3WP6/pEVNsk
+GhVbBll8T/FkHpF7OPINo3+7okxk6RJSsuu0A9n/EJv0bF/CynbcBwmaMwQodK9J7+wmBi2s
+raqDpmO/27nceIiOUvJu+P88CtsA9jvsvNBqErcbRixWRfZ4ckHnSGarWA0R7BlJtVPS0P3d
+sa0C0JNBsXXj0w37OmNtPvbtMf48sDHCfYpKnOH76IbmwAx4P2xSxlGNDMhn+vduSApG53so
+W7h6hle4PWt23RcQhHwGM4Xwrb3futdnufv1xZd4JuvHbywOLeuaddznRNQ7aQmepoK4VO8o
+zQIDAQABo4ICRzCCAkMwDAYDVR0TAQH/BAIwADAfBgNVHSMEGDAWgBT4OgxpEXbg7azR66ZZ
++jfVxFWwHjByBggrBgEFBQcBAQRmMGQwLgYIKwYBBQUHMAKGImh0dHA6Ly9jZXJ0cy5hcHBs
+ZS5jb20vZGV2aWRnMi5kZXIwMgYIKwYBBQUHMAGGJmh0dHA6Ly9vY3NwLmFwcGxlLmNvbS9v
+Y3NwMDMtZGV2aWRnMjA2MIIBHgYDVR0gBIIBFTCCAREwggENBgkqhkiG92NkBQEwgf8wgcMG
+CCsGAQUFBwICMIG2DIGzUmVsaWFuY2Ugb24gdGhpcyBjZXJ0aWZpY2F0ZSBieSBhbnkgcGFy
+dHkgYXNzdW1lcyBhY2NlcHRhbmNlIG9mIHRoZSB0aGVuIGFwcGxpY2FibGUgc3RhbmRhcmQg
+dGVybXMgYW5kIGNvbmRpdGlvbnMgb2YgdXNlLCBjZXJ0aWZpY2F0ZSBwb2xpY3kgYW5kIGNl
+cnRpZmljYXRpb24gcHJhY3RpY2Ugc3RhdGVtZW50cy4wNwYIKwYBBQUHAgEWK2h0dHBzOi8v
+d3d3LmFwcGxlLmNvbS9jZXJ0aWZpY2F0ZWF1dGhvcml0eS8wFwYDVR0lAQH/BA0wCwYJKoZI
+hvdjZAQNMB0GA1UdDgQWBBRw2QQkZ/3DU6iYOfOokCqaqalBxjAOBgNVHQ8BAf8EBAMCB4Aw
+HwYKKoZIhvdjZAYBIQQRDA8yMDIzMDQxNzAwMDAwMFowEwYKKoZIhvdjZAYBDgEB/wQCBQAw
+DQYJKoZIhvcNAQELBQADggEBALTMAR5MvY4Npwb7nU359f3kdF+hxEYYxis/tEQV48NRNu/e
+eIUkMo/YozNdyabTqiV9wqrva63VChaVwOCBsW/hrogVpVcE4XaLoO4J9ShFyxSIAf3nxylM
+kFYlwJ6Lfv/wJ37uTEbJWJsWKQTiMELaslBE7w+4TOBPv906mtnNriRrySjMFFKdHCOhtrJS
+F8ihyVX4I3BpIhdqRyaggz4gScBly0mxOsLCRMmYMYbwOQBIXM1NSxJBDCYoiRxxA+POUspy
+mCn7lgrOKptQn/EkP7QSp2xaNebhvpsQEfCIlpVWZj22s5heBNCpRO/ZqBoQGN9qZ9qQ4y9v
+qAubeiU=</X509Certificate>
+     <X509Certificate>MIIEPjCCAyagAwIBAgIUf7QAP82XSXrLg02SpIp4c8KEXUMwDQYJKoZIhvcNAQELBQAwYjEL
+MAkGA1UEBhMCVVMxEzARBgNVBAoTCkFwcGxlIEluYy4xJjAkBgNVBAsTHUFwcGxlIENlcnRp
+ZmljYXRpb24gQXV0aG9yaXR5MRYwFAYDVQQDEw1BcHBsZSBSb290IENBMB4XDTIxMDkyMjE4
+NTUxMFoXDTMxMDkxNzAwMDAwMFowXjEtMCsGA1UEAwwkRGV2ZWxvcGVyIElEIENlcnRpZmlj
+YXRpb24gQXV0aG9yaXR5MQswCQYDVQQLDAJHMjETMBEGA1UECgwKQXBwbGUgSW5jLjELMAkG
+A1UEBhMCVVMwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDTLJVoIVSRir9lccIY
+TvbNDeGRKHXXA7qVH9MSmVJE3oBGZ/wpiwCFiIowh01Mbkq0x+UC49djTKrM6uzbQi+RfSXp
+X6RLKlRvF6wwnykoNKR/j+V4410jKiFG0InDX/hql51xGxiosgzJAwo1sgKnLfWz3BuDxSch
+QHKm5zd2Mee7Br90svZwrEysLc3JXkWLz/sI5mLVQJW1N1zMGw7h79yl5Y3JULdAnwojJUVA
+j5Rne+CU6jnTeKU00cLL4DN/LrYsw+Um1SXOqo0qd/yeFJaX4PVfLvLop3GnO6OZTHoio03v
+cBHV1oaBgvFnM5MzWkCxksSqc5YdxFz/4es3AgMBAAGjge8wgewwEgYDVR0TAQH/BAgwBgEB
+/wIBADAfBgNVHSMEGDAWgBQr0GlHlHYJ/vRrjS5ApvdHTX8IXjBEBggrBgEFBQcBAQQ4MDYw
+NAYIKwYBBQUHMAGGKGh0dHA6Ly9vY3NwLmFwcGxlLmNvbS9vY3NwMDMtYXBwbGVyb290Y2Ew
+LgYDVR0fBCcwJTAjoCGgH4YdaHR0cDovL2NybC5hcHBsZS5jb20vcm9vdC5jcmwwHQYDVR0O
+BBYEFPg6DGkRduDtrNHrpln6N9XEVbAeMA4GA1UdDwEB/wQEAwIBBjAQBgoqhkiG92NkBgIG
+BAIFADANBgkqhkiG9w0BAQsFAAOCAQEAwf1DClm/8bG3QxBa1hgyMBRWJuERSGMraXKXSB+O
+W8peJhX7dCOAM1QzGaEihlrYuEtpqqfOlpbCCsc1atBvzoppg2JtSjn1/oNN16LUiB/tiMAP
++PkzHrQQt8JcETdENwSwpESdjGgNe30dfsy1k/DWbz0VeoCldNPhj33SiOgxp5jFH9/iglmu
+gIFgRhbsnrmKQKobKuFhhgqMcA/ZSizsTKIFEdZ5jKVjJSEjAm+TW1pXoddFbd/M93+fX9vH
+7WSnb0Qvb009eHgKVrQ71zrIK2Wik+rbWOqO1LnEwDD8MhpNupIMJDmYgjqgmd7n5OS8DryF
+r1qrXND828wQww==</X509Certificate>
+     <X509Certificate>MIIEuzCCA6OgAwIBAgIBAjANBgkqhkiG9w0BAQUFADBiMQswCQYDVQQGEwJVUzETMBEGA1UE
+ChMKQXBwbGUgSW5jLjEmMCQGA1UECxMdQXBwbGUgQ2VydGlmaWNhdGlvbiBBdXRob3JpdHkx
+FjAUBgNVBAMTDUFwcGxlIFJvb3QgQ0EwHhcNMDYwNDI1MjE0MDM2WhcNMzUwMjA5MjE0MDM2
+WjBiMQswCQYDVQQGEwJVUzETMBEGA1UEChMKQXBwbGUgSW5jLjEmMCQGA1UECxMdQXBwbGUg
+Q2VydGlmaWNhdGlvbiBBdXRob3JpdHkxFjAUBgNVBAMTDUFwcGxlIFJvb3QgQ0EwggEiMA0G
+CSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDkkakJH5HbHkdQ6wXtXnmELes2oldMVeyLGYne
++Uts9QerIjAC6Bg++FAJ039BqJj50cpmnCRrEdCju+QbKsMflZ56DKRHi1vUFjczy8QPTc4U
+adHJGXL1XQ7Vf1+b8iUDulWPTV0N8WQ1IxVLFVkds5T39pyez1C6wVhQZ48ItCD3y6wsIG9w
+tj8BMIy3Q88PnT3zK0koGsj+zrW5DtleHNbLPbU6rfQPDgCSC7EhFi501TwN22IWq6NxkkdT
+VcGvL0Gz+PvjcM3mo0xFfh9Ma1CWQYnEdGILEINBhzOKgbEwWOxaBDKMaLOPHd5lc/9nXmW8
+Sdh2nzMUZaF3lMktAgMBAAGjggF6MIIBdjAOBgNVHQ8BAf8EBAMCAQYwDwYDVR0TAQH/BAUw
+AwEB/zAdBgNVHQ4EFgQUK9BpR5R2Cf70a40uQKb3R01/CF4wHwYDVR0jBBgwFoAUK9BpR5R2
+Cf70a40uQKb3R01/CF4wggERBgNVHSAEggEIMIIBBDCCAQAGCSqGSIb3Y2QFATCB8jAqBggr
+BgEFBQcCARYeaHR0cHM6Ly93d3cuYXBwbGUuY29tL2FwcGxlY2EvMIHDBggrBgEFBQcCAjCB
+thqBs1JlbGlhbmNlIG9uIHRoaXMgY2VydGlmaWNhdGUgYnkgYW55IHBhcnR5IGFzc3VtZXMg
+YWNjZXB0YW5jZSBvZiB0aGUgdGhlbiBhcHBsaWNhYmxlIHN0YW5kYXJkIHRlcm1zIGFuZCBj
+b25kaXRpb25zIG9mIHVzZSwgY2VydGlmaWNhdGUgcG9saWN5IGFuZCBjZXJ0aWZpY2F0aW9u
+IHByYWN0aWNlIHN0YXRlbWVudHMuMA0GCSqGSIb3DQEBBQUAA4IBAQBcNplMLXi37Yyb3PN3
+m/J20ncwT8EfhYOFG5k9RzfyqZtAjizUsZAS2L70c5vu0mQPy3lPNNiiPvl4/2vIB+x9OYOL
+UyDTOMSxv5pPCmv/K/xZpwUJfBdAVhEedNO3iyM7R6PVbyTi69G3cN8PReEnyvFteO3ntRcX
+qNx+IjXKJdXZD9Zr1KIkIxH3oayPc4FgxhtbCS+SsvhESPBgOJ4V9T0mZyCKM2r3DYLP3uuj
+L/lTaltkwGMzd/c6ByxW69oPIQ7aunMZT7XZNn/Bh1XZp5m5MkL72NVxnn6hUrcbvZNCJBIq
+xw8dtk2cXmPIS4AXUKqK1drk/NAJBzewdXUh</X509Certificate>
+    </X509Data>
+   </KeyInfo>
+  </x-signature>
+  <file id="13">
+   <data>
+    <length>956</length>
+    <offset>90462796</offset>
+    <size>2669</size>
+    <encoding style="application/x-gzip"/>
+    <extracted-checksum style="sha1">2a0e98f445de05b115d1974aad89df71c962abcc</extracted-checksum>
+    <archived-checksum style="sha1">b34d7f1a4044d6000a0c71d2a2158cfc0a5d4b75</archived-checksum>
+   </data>
+   <type>file</type>
+   <name>Distribution</name>
+   <name>Distribution</name>
+  </file>
+  <file id="6">
+   <ctime>1970-01-01T00:00:00Z</ctime>
+   <mtime>1970-01-01T00:00:00Z</mtime>
+   <atime>1970-01-01T00:00:00Z</atime>
+   <group>wheel</group>
+   <gid>0</gid>
+   <user>root</user>
+   <uid>0</uid>
+   <mode>0700</mode>
+   <deviceno>0</deviceno>
+   <inode>0</inode>
+   <type>directory</type>
+   <name>Resources</name>
+   <name>Resources</name>
+   <file id="7">
+    <ctime>1970-01-01T00:00:00Z</ctime>
+    <mtime>1970-01-01T00:00:00Z</mtime>
+    <atime>1970-01-01T00:00:00Z</atime>
+    <group>wheel</group>
+    <gid>0</gid>
+    <user>root</user>
+    <uid>0</uid>
+    <mode>0700</mode>
+    <deviceno>0</deviceno>
+    <inode>0</inode>
+    <type>directory</type>
+    <name>en.lproj</name>
+    <name>en.lproj</name>
+    <file id="8">
+     <data>
+      <length>391</length>
+      <offset>90461782</offset>
+      <size>709</size>
+      <encoding style="application/x-gzip"/>
+      <extracted-checksum style="sha1">cb93440e1d56a0f8b3fe215e2577a5f609c8a1d2</extracted-checksum>
+      <archived-checksum style="sha1">0fc3c55dc65de44b5412cf5f40938939f0a099be</archived-checksum>
+     </data>
+     <type>file</type>
+     <name>welcome.rtf</name>
+     <name>welcome.rtf</name>
+    </file>
+    <file id="9">
+     <data>
+      <length>116</length>
+      <offset>90462173</offset>
+      <size>264</size>
+      <encoding style="application/x-gzip"/>
+      <extracted-checksum style="sha1">e3d0d1665bea9894f50964eb465da4d90ac917c7</extracted-checksum>
+      <archived-checksum style="sha1">bf2ed7b1375b157488de3d8fcf731d99251ea6db</archived-checksum>
+     </data>
+     <type>file</type>
+     <name>Localizable.strings</name>
+     <name>Localizable.strings</name>
+    </file>
+   </file>
+   <file id="10">
+    <ctime>1970-01-01T00:00:00Z</ctime>
+    <mtime>1970-01-01T00:00:00Z</mtime>
+    <atime>1970-01-01T00:00:00Z</atime>
+    <group>wheel</group>
+    <gid>0</gid>
+    <user>root</user>
+    <uid>0</uid>
+    <mode>0700</mode>
+    <deviceno>0</deviceno>
+    <inode>0</inode>
+    <type>directory</type>
+    <name>zh-Hans.lproj</name>
+    <name>zh-Hans.lproj</name>
+    <file id="11">
+     <data>
+      <length>391</length>
+      <offset>90462289</offset>
+      <size>709</size>
+      <encoding style="application/x-gzip"/>
+      <extracted-checksum style="sha1">cb93440e1d56a0f8b3fe215e2577a5f609c8a1d2</extracted-checksum>
+      <archived-checksum style="sha1">0fc3c55dc65de44b5412cf5f40938939f0a099be</archived-checksum>
+     </data>
+     <type>file</type>
+     <name>welcome.rtf</name>
+     <name>welcome.rtf</name>
+    </file>
+    <file id="12">
+     <data>
+      <length>116</length>
+      <offset>90462680</offset>
+      <size>238</size>
+      <encoding style="application/x-gzip"/>
+      <extracted-checksum style="sha1">d0c7108d7f65ec18bbe854e5774365e2d53b34f9</extracted-checksum>
+      <archived-checksum style="sha1">172ec7f88f95b44685d2ab2a5a6f314446e48667</archived-checksum>
+     </data>
+     <type>file</type>
+     <name>Localizable.strings</name>
+     <name>Localizable.strings</name>
+    </file>
+   </file>
+  </file>
+  <file id="1">
+   <ctime>1970-01-01T00:00:00Z</ctime>
+   <mtime>1970-01-01T00:00:00Z</mtime>
+   <atime>1970-01-01T00:00:00Z</atime>
+   <group>wheel</group>
+   <gid>0</gid>
+   <user>root</user>
+   <uid>0</uid>
+   <mode>0700</mode>
+   <deviceno>0</deviceno>
+   <inode>0</inode>
+   <type>directory</type>
+   <name>UURemote.pkg</name>
+   <name>UURemote.pkg</name>
+   <file id="2">
+    <data>
+     <length>10790</length>
+     <offset>9492</offset>
+     <size>83135</size>
+     <encoding style="application/x-gzip"/>
+     <extracted-checksum style="sha1">52e891c146a4a34c522e3778bda569814057b4e2</extracted-checksum>
+     <archived-checksum style="sha1">6c0c17a2e80562847b16d9c2fab54337e9db0bfb</archived-checksum>
+    </data>
+    <FinderCreateTime>
+     <nanoseconds>0</nanoseconds>
+     <time>1900-01-00T10:59:12</time>
+    </FinderCreateTime>
+    <ctime>2026-11-04T08:10:47Z</ctime>
+    <mtime>2026-11-04T08:10:47Z</mtime>
+    <atime>2026-11-04T08:10:47Z</atime>
+    <group>staff</group>
+    <gid>20</gid>
+    <user>game-netease</user>
+    <uid>501</uid>
+    <mode>0644</mode>
+    <deviceno>16777233</deviceno>
+    <inode>295604370</inode>
+    <type>file</type>
+    <name>Bom</name>
+    <name>Bom</name>
+    <name>Bom</name>
+   </file>
+   <file id="3">
+    <data>
+     <length>90435539</length>
+     <encoding style="application/octet-stream"/>
+     <offset>20282</offset>
+     <size>90435539</size>
+     <extracted-checksum style="sha1">608c7f8a0fdc9332dac15cde244ab3f87bdf4224</extracted-checksum>
+     <archived-checksum style="sha1">608c7f8a0fdc9332dac15cde244ab3f87bdf4224</archived-checksum>
+    </data>
+    <FinderCreateTime>
+     <nanoseconds>0</nanoseconds>
+     <time>1900-01-00T21:41:20</time>
+    </FinderCreateTime>
+    <ctime>2026-11-04T08:10:51Z</ctime>
+    <mtime>2026-11-04T08:10:51Z</mtime>
+    <atime>2026-11-04T08:10:47Z</atime>
+    <group>staff</group>
+    <gid>20</gid>
+    <user>game-netease</user>
+    <uid>501</uid>
+    <mode>0644</mode>
+    <deviceno>16777233</deviceno>
+    <inode>295604381</inode>
+    <type>file</type>
+    <name>Payload</name>
+    <name>Payload</name>
+    <name>Payload</name>
+   </file>
+   <file id="4">
+    <data>
+     <length>5574</length>
+     <encoding style="application/octet-stream"/>
+     <offset>90455821</offset>
+     <size>5574</size>
+     <extracted-checksum style="sha1">051248fe81807ad24b514ac61c075ccaec281696</extracted-checksum>
+     <archived-checksum style="sha1">051248fe81807ad24b514ac61c075ccaec281696</archived-checksum>
+    </data>
+    <FinderCreateTime>
+     <nanoseconds>0</nanoseconds>
+     <time>1900-01-00T21:39:12</time>
+    </FinderCreateTime>
+    <ctime>2026-11-04T08:10:51Z</ctime>
+    <mtime>2026-11-04T08:10:51Z</mtime>
+    <atime>2026-11-04T08:10:51Z</atime>
+    <group>staff</group>
+    <gid>20</gid>
+    <user>game-netease</user>
+    <uid>501</uid>
+    <mode>0644</mode>
+    <deviceno>16777233</deviceno>
+    <inode>295604442</inode>
+    <type>file</type>
+    <name>Scripts</name>
+    <name>Scripts</name>
+    <name>Scripts</name>
+   </file>
+   <file id="5">
+    <data>
+     <length>387</length>
+     <offset>90461395</offset>
+     <size>817</size>
+     <encoding style="application/x-gzip"/>
+     <extracted-checksum style="sha1">afd8d70e0e188d7135bf0503e3db9db89234dff4</extracted-checksum>
+     <archived-checksum style="sha1">b6e1c49c6f3dc715f7efb2b3c128573fa3938ba0</archived-checksum>
+    </data>
+    <type>file</type>
+    <name>PackageInfo</name>
+    <name>PackageInfo</name>
+    <name>PackageInfo</name>
+   </file>
+  </file>
+ </toc>
+</xar>
